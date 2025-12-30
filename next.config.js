@@ -1,7 +1,12 @@
 /* eslint-env node */
 
 // https://github.com/vercel/next.js/blob/master/packages/next/next-server/server/config.ts
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
+const basePath = isGithubPages ? '/nextjs-resume' : '';
+
 const nextConfig = {
+  assetPrefix: basePath || undefined,
+  basePath,
   webpack: config => {
     const oneOfRule = config.module.rules.find(rule => rule.oneOf);
 
@@ -22,8 +27,10 @@ const nextConfig = {
   productionBrowserSourceMaps: false,
   reactStrictMode: true,
   swcMinify: true,
-  trailingSlash: false,
+  trailingSlash: true,
+  output: 'export',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
