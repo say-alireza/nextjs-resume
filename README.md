@@ -1,5 +1,6 @@
 # Frontend Developer Resume
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/aff24bad-d7c6-4773-a448-5cf7f86a4a7f" />
 
 Personal resume website for Alireza Rahimpanah, built with Next.js and TypeScript. It highlights frontend experience, skills, and selected projects.
 
@@ -11,8 +12,7 @@ Personal resume website for Alireza Rahimpanah, built with Next.js and TypeScrip
 
 ## Resume Links
 
-- Live Site: https://say-alireza.github.io/nextjs-resume/
-- PDF: `public/Alireza-Rahimpanah-main.pdf`
+- Live Site: [https://say-alireza.github.io/nextjs-resume/](https://say-alireza.github.io/nextjs-resume/)
 - GitHub: https://github.com/say-alireza
 - LinkedIn: https://linkedin.com/in/alireza-rahimpanah-b7010a301
 
