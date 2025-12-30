@@ -1,6 +1,5 @@
 # Alireza Rahimpanah - Frontend Developer Resume
 
-![Resume Website Screenshot](resume-screenshot.jpg?raw=true "Resume Website Screenshot")
 
 Personal resume website for Alireza Rahimpanah, built with Next.js and TypeScript. It highlights frontend experience, skills, and selected projects.
 
