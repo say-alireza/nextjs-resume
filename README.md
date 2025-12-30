@@ -11,6 +11,8 @@ Personal resume website for Alireza Rahimpanah, built with Next.js and TypeScrip
 
 ## Resume Links
 
+- Live Site: https://say-alireza.github.io/nextjs-resume/
+- PDF: `public/Alireza-Rahimpanah-main.pdf`
 - GitHub: https://github.com/say-alireza
 - LinkedIn: https://linkedin.com/in/alireza-rahimpanah-b7010a301
 
