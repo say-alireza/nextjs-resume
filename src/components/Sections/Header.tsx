@@ -127,7 +127,7 @@ const NavItem: FC<{
   return (
     <Link
       className={classNames(current ? activeClass : inactiveClass)}
-      href={`/#${section}`}
+      href={`#${section}`}
       key={section}
       onClick={onClick}>
       {section}

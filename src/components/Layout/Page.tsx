@@ -7,6 +7,7 @@ import {HomepageMeta} from '../../data/dataDef';
 
 const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, description}) => {
   const {asPath: pathname} = useRouter();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   return (
     <>
@@ -17,10 +18,10 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         {/* several domains list the same content, make sure google knows we mean this one. */}
         <link href={`https://reactresume.com${pathname}`} key="canonical" rel="canonical" />
 
-        <link href="/favicon.ico" rel="icon" sizes="any" />
-        <link href="/icon.svg" rel="icon" type="image/svg+xml" />
-        <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
-        <link href="/site.webmanifest" rel="manifest" />
+        <link href={`${basePath}/favicon.ico`} rel="icon" sizes="any" />
+        <link href={`${basePath}/icon.svg`} rel="icon" type="image/svg+xml" />
+        <link href={`${basePath}/apple-touch-icon.png`} rel="apple-touch-icon" />
+        <link href={`${basePath}/site.webmanifest`} rel="manifest" />
 
         {/* Open Graph : https://ogp.me/ */}
         <meta content={title} property="og:title" />

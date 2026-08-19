@@ -5,6 +5,9 @@ const isGithubPages = process.env.GITHUB_PAGES === 'true';
 const basePath = isGithubPages ? '/nextjs-resume' : '';
 
 const nextConfig = {
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   assetPrefix: basePath || undefined,
   basePath,
   webpack: config => {

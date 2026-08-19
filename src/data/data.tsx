@@ -50,6 +50,8 @@ export const SectionId = {
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 /**
  * Hero section
  */
@@ -68,7 +70,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: '/Alireza-Rahimpanah-main.pdf',
+      href: `${basePath}/Alireza-Rahimpanah-main.pdf`,
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
