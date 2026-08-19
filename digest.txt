@@ -1,0 +1,2665 @@
+Directory structure:
+└── nextjs-resume/
+    ├── README.md
+    ├── LICENSE
+    ├── next-env.d.ts
+    ├── next-sitemap.js
+    ├── next.config.js
+    ├── package.json
+    ├── postcss.config.js
+    ├── stylelint.config.js
+    ├── tailwind.config.js
+    ├── tsconfig.json
+    ├── .eslintrc
+    ├── .prettierignore
+    ├── .prettierrc
+    ├── .yarnrc.yml
+    ├── public/
+    │   ├── site.webmanifest
+    │   └── .nojekyll
+    ├── src/
+    │   ├── config.ts
+    │   ├── globalStyles.scss
+    │   ├── types.d.ts
+    │   ├── components/
+    │   │   ├── Base.tsx
+    │   │   ├── Socials.tsx
+    │   │   ├── .gitkeep
+    │   │   ├── Icon/
+    │   │   │   ├── DribbbleIcon.tsx
+    │   │   │   ├── FacebookIcon.tsx
+    │   │   │   ├── GithubIcon.tsx
+    │   │   │   ├── Icon.tsx
+    │   │   │   ├── InstagramIcon.tsx
+    │   │   │   ├── LinkedInIcon.tsx
+    │   │   │   ├── QuoteIcon.tsx
+    │   │   │   ├── StackOverflowIcon.tsx
+    │   │   │   └── TwitterIcon.tsx
+    │   │   ├── Layout/
+    │   │   │   ├── Page.tsx
+    │   │   │   └── Section.tsx
+    │   │   └── Sections/
+    │   │       ├── About.tsx
+    │   │       ├── Footer.tsx
+    │   │       ├── Header.tsx
+    │   │       ├── Hero.tsx
+    │   │       ├── Portfolio.tsx
+    │   │       ├── Testimonials.tsx
+    │   │       ├── Contact/
+    │   │       │   ├── ContactForm.tsx
+    │   │       │   └── index.tsx
+    │   │       └── Resume/
+    │   │           ├── index.tsx
+    │   │           ├── ResumeSection.tsx
+    │   │           ├── Skills.tsx
+    │   │           └── TimelineItem.tsx
+    │   ├── data/
+    │   │   ├── data.tsx
+    │   │   └── dataDef.ts
+    │   ├── hooks/
+    │   │   ├── useDetectOutsideClick.ts
+    │   │   ├── useInterval.ts
+    │   │   ├── useNavObserver.tsx
+    │   │   └── useWindow.ts
+    │   ├── images/
+    │   │   ├── header-background.webp
+    │   │   ├── testimonial.webp
+    │   │   └── .gitkeep
+    │   └── pages/
+    │       ├── _app.tsx
+    │       ├── _document.tsx
+    │       ├── index.tsx
+    │       └── api/
+    │           └── .gitkeep
+    └── .github/
+        └── workflows/
+            └── gh-pages.yml
+
+================================================
+FILE: README.md
+================================================
+# Frontend Developer Resume
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/aff24bad-d7c6-4773-a448-5cf7f86a4a7f" />
+
+Personal resume website for Alireza Rahimpanah, built with Next.js and TypeScript. It highlights frontend experience, skills, and selected projects.
+
+## Highlights
+
+- 2+ years of frontend development experience
+- React, Next.js, Tailwind CSS, Bootstrap
+- Responsive, accessible UI focused on clean, maintainable code
+
+## Resume Links
+
+- Live Site: [https://say-alireza.github.io/nextjs-resume/](https://say-alireza.github.io/nextjs-resume/)
+- GitHub: https://github.com/say-alireza
+- LinkedIn: https://linkedin.com/in/alireza-rahimpanah-b7010a301
+
+## Featured Projects
+
+- Game Hub: https://github.com/say-alireza/gamehub-react
+- Shopping Panel: https://github.com/say-alireza/bootstrap-project-shopping-pannel
+- Trade Bot Panel: https://github.com/say-alireza/trade-bot-pannel-front-end
+
+## Tech Stack
+
+- Next.js, React, TypeScript
+- Tailwind CSS, Bootstrap
+- Heroicons
+
+## Getting Started
+
+Install dependencies and run the dev server:
+
+```bash
+npm install
+npm run dev
+```
+
+Build and run the production server:
+
+```bash
+npm run build
+npm run start
+```
+
+## Customize Content
+
+Edit the data file and images:
+
+- Data: `src/data/data.tsx`
+- Images: `src/images/`
+- Resume PDF: `public/Alireza-Rahimpanah-main.pdf`
+
+## Deployment
+
+Deploy with Vercel or any Next.js-compatible host. For Vercel, import the repo and follow the default Next.js settings.
+
+
+
+================================================
+FILE: LICENSE
+================================================
+MIT License
+
+Copyright (c) 2021 Tim Baker
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+
+================================================
+FILE: next-env.d.ts
+================================================
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/pages/building-your-application/configuring/typescript for more information.
+
+
+
+================================================
+FILE: next-sitemap.js
+================================================
+/* eslint-env node */
+module.exports = {
+  siteUrl: 'reactresume.com',
+  exclude: ['/404*', '/500*'],
+  transform: async (config, path) => {
+    return {
+      loc: path,
+      changefreq: config.changefreq,
+      priority: path === '/' ? 1 : config.priority,
+      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+    };
+  },
+  generateRobotsTxt: true,
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+      {
+        userAgent: '*',
+        disallow: ['/404', '/500'],
+      },
+    ],
+  },
+};
+
+
+
+================================================
+FILE: next.config.js
+================================================
+/* eslint-env node */
+
+// https://github.com/vercel/next.js/blob/master/packages/next/next-server/server/config.ts
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
+const basePath = isGithubPages ? '/nextjs-resume' : '';
+
+const nextConfig = {
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
+  assetPrefix: basePath || undefined,
+  basePath,
+  webpack: config => {
+    const oneOfRule = config.module.rules.find(rule => rule.oneOf);
+
+    // Next 12 has multiple TS loaders, and we need to update all of them.
+    const tsRules = oneOfRule.oneOf.filter(rule => rule.test && rule.test.toString().includes('tsx|ts'));
+
+    tsRules.forEach(rule => {
+      // eslint-disable-next-line no-param-reassign
+      rule.include = undefined;
+    });
+
+    return config;
+  },
+  compress: true,
+  generateEtags: true,
+  pageExtensions: ['tsx', 'mdx', 'ts'],
+  poweredByHeader: false,
+  productionBrowserSourceMaps: false,
+  reactStrictMode: true,
+  swcMinify: true,
+  trailingSlash: true,
+  output: 'export',
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },{
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+      },
+    ],
+  },
+};
+
+module.exports = nextConfig;
+
+
+
+================================================
+FILE: package.json
+================================================
+{
+  "name": "react-resume-template",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "build": "yarn compile && yarn next build",
+    "clean": "rm -rf build-tsc .next",
+    "compile": "yarn run -T tsc --build --verbose",
+    "dev": "yarn compile && yarn next dev",
+    "lint": "yarn run -T prettier --write './src/**/*.{js,jsx,json,ts,tsx}' && eslint './src/**/*.{js,jsx,ts,tsx}' --fix --max-warnings=0",
+    "start": "yarn next start",
+    "sitemap": "yarn next-sitemap"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.16",
+    "@heroicons/react": "^2.0.18",
+    "autoprefixer": "10.4.16",
+    "classnames": "^2.3.2",
+    "next": "^14.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-pattern": "^5.0.4"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^14.0.3",
+    "@tailwindcss/forms": "^0.5.4",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.4.5",
+    "@types/react": "^18.2.18",
+    "@types/tailwindcss": "^3.1.0",
+    "@types/webpack-env": "^1.18.1",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.46.0",
+    "eslint-config-next": "^14.0.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-module-resolver": "^1.5.0",
+    "eslint-plugin-monorepo": "^0.3.2",
+    "eslint-plugin-react": "^7.33.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-memo": "^0.0.3",
+    "eslint-plugin-react-native": "^4.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "postcss": "^8.4.27",
+    "postcss-preset-env": "^9.1.0",
+    "prettier": "^3.0.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "sass": "^1.64.2",
+    "sort-package-json": "^2.5.1",
+    "stylelint": "^15.10.2",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-prettier": "^4.0.2",
+    "tailwindcss": "^3.3.3",
+    "typescript": "5.3.2"
+  },
+  "resolutions": {
+    "autoprefixer": "10.4.5"
+  }
+}
+
+
+
+================================================
+FILE: postcss.config.js
+================================================
+/* eslint-env node */
+
+module.exports = {
+  plugins: {
+    'tailwindcss/nesting': {},
+    tailwindcss: {},
+    autoprefixer: {},
+    'postcss-preset-env': {
+      features: {'nesting-rules': false},
+    },
+    ...(process.env.NODE_ENV === 'production' ? {cssnano: {}} : {}),
+  },
+};
+
+
+
+================================================
+FILE: stylelint.config.js
+================================================
+/* eslint-env node */
+
+module.exports = {
+  extends: ['stylelint-config-recommended', 'stylelint-order'],
+  plugins: ['stylelint-prettier', 'stylelint-order'],
+  rules: {
+    'no-descending-specificity': null,
+    'font-family-no-missing-generic-family-keyword': null,
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['tailwind'],
+      },
+    ],
+  },
+};
+
+
+
+================================================
+FILE: tailwind.config.js
+================================================
+// eslint-disable-next-line no-undef
+module.exports = {
+  content: ['./src/**/*.{js,ts,jsx,tsx,css,scss}'],
+  // darkMode: 'media', // or 'media' or 'class'
+  theme: {
+    extend: {
+      colors: {
+        yellow: '#efc603',
+      },
+      keyframes: {
+        typing: {
+          '0%, 100%': {width: '0%'},
+          '30%, 70%': {width: '100%'},
+        },
+        blink: {
+          '0%': {
+            opacity: 0,
+          },
+        },
+        'rotate-loader': {
+          '0%': {
+            transform: 'rotate(0deg)',
+            strokeDashoffset: '360%',
+          },
+          '100%': {
+            transform: 'rotate(360deg)',
+            strokeDashoffset: '-360%',
+          },
+        },
+      },
+      screens: {
+        touch: {raw: 'only screen and (pointer: coarse)'},
+      },
+    },
+  },
+  // eslint-disable-next-line no-undef
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+};
+
+
+
+================================================
+FILE: tsconfig.json
+================================================
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+
+
+
+================================================
+FILE: .eslintrc
+================================================
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "simple-import-sort", "import", "react", "react-memo", "react-hooks"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@next/next/recommended",
+    "prettier"
+  ],
+  "ignorePatterns": ["*/public", "*/node_modules/*", "*/.next/*", "*/dist/*"],
+  "rules": {
+    "react/display-name": "off",
+    // The next two rules should be errors. But for now we"ll leave them as warnings since this will take a while
+    "react-memo/require-usememo": "error",
+    "react-memo/require-memo": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/member-ordering": [
+      "warn",
+      {
+        "interfaces": ["signature", "method", "constructor", "field"],
+        "typeLiterals": ["signature", "method", "constructor", "field"]
+      }
+    ],
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "import/order": "off",
+    "no-irregular-whitespace": "off",
+    "@typescript-eslint/no-unused-vars": ["warn", {"argsIgnorePattern": "^_"}],
+    "object-curly-spacing": ["error", "never"],
+    "react/jsx-curly-brace-presence": [2, "never"],
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-sort-props": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unescaped-entities": "off",
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error",
+    "sort-imports": "off",
+    "jsx-a11y/no-onchange": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "@next/next/no-img-element": "off"
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    },
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
+}
+
+
+
+================================================
+FILE: .prettierignore
+================================================
+next/.next/
+
+
+================================================
+FILE: .prettierrc
+================================================
+{
+  "bracketSpacing": false,
+  "bracketSameLine": true,
+  "printWidth": 120,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false,
+  "arrowParens": "avoid"
+}
+
+
+
+================================================
+FILE: .yarnrc.yml
+================================================
+nodeLinker: node-modules
+
+
+================================================
+FILE: public/site.webmanifest
+================================================
+{
+  "name": "react-resume-template",
+  "short_name": "react-resume-template",
+  "icons": [
+    {"src": "/icon-192.png", "type": "image/png", "sizes": "192x192"},
+    {"src": "/icon-512.png", "type": "image/png", "sizes": "512x512"}
+  ],
+  "theme_color": "#515455",
+  "background_color": "#515455",
+  "display": "standalone"
+}
+
+
+
+================================================
+FILE: public/.nojekyll
+================================================
+[Empty file]
+
+
+================================================
+FILE: src/config.ts
+================================================
+export const isBrowser = typeof window !== 'undefined';
+export const isMobile = isBrowser ? window.matchMedia('(pointer: coarse)').matches : false;
+export const canUseDOM: boolean =
+  typeof window !== 'undefined' &&
+  typeof window.document !== 'undefined' &&
+  typeof window.document.createElement !== 'undefined';
+export const isApple: boolean = canUseDOM && /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+
+
+
+================================================
+FILE: src/globalStyles.scss
+================================================
+// @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @layer utilities {
+//   /* Chrome, Safari and Opera */
+//   .no-scrollbar::-webkit-scrollbar {
+//     display: none;
+//   }
+
+//   .no-scrollbar {
+//     -ms-overflow-style: none; /* IE and Edge */
+//     scrollbar-width: none; /* Firefox */
+//   }
+// }
+
+// @supports (-webkit-touch-callout: none) {
+//   .h-screen {
+//     height: -webkit-fill-available;
+//   }
+// }
+
+// /* Global styles */
+// * {
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+// html {
+//   -webkit-tap-highlight-color: transparent;
+//   scroll-behavior: smooth;
+//   height: 100vh;
+// }
+
+// body {
+//   position: relative;
+//   width: 100%;
+//   color: #444444;
+//   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, 'Helvetica Neue', sans-serif;
+//   background-color: #fafafa;
+// }
+
+// td,
+// th {
+//   padding: 4px 8px 4px 4px;
+//   text-align: left;
+// }
+
+// th {
+//   font-weight: 600;
+// }
+body {
+  position: relative;
+  width: 100%;
+  color: #e5e7eb;
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
+  background-color: #0b1120;
+}
+
+::selection {
+  background-color: #06b6d4;
+  color: #0b1120;
+}
+
+
+================================================
+FILE: src/types.d.ts
+================================================
+// Modules
+
+declare module '*.jpg' {
+  const value: string;
+  export default value;
+}
+declare module '*.webp' {
+  const value: string;
+  export default value;
+}
+
+declare module '*.svg' {
+  const value: string;
+  export default value;
+}
+
+declare module '*.png' {
+  const value: string;
+  export default value;
+}
+
+declare module '*.webm' {
+  const value: string;
+  export default value;
+}
+
+declare module '*.mp4' {
+  const value: string;
+  export default value;
+}
+
+
+
+================================================
+FILE: src/components/Base.tsx
+================================================
+import {FC, memo} from 'react';
+
+const Base: FC = memo(() => {
+  return <></>;
+});
+
+Base.displayName = 'Base';
+export default Base;
+
+
+
+================================================
+FILE: src/components/Socials.tsx
+================================================
+import {FC, memo} from 'react';
+
+import {socialLinks} from '../data/data';
+
+const Socials: FC = memo(() => {
+  return (
+    <>
+      {socialLinks.map(({label, Icon, href}) => (
+        <a
+          aria-label={label}
+          className="-m-1.5 rounded-md p-1.5 transition-all duration-300 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500  sm:-m-3 sm:p-3"
+          href={href}
+          key={label}>
+          <Icon className="h-5 w-5 align-baseline sm:h-6 sm:w-6" />
+        </a>
+      ))}
+    </>
+  );
+});
+
+Socials.displayName = 'Socials';
+export default Socials;
+
+
+
+================================================
+FILE: src/components/.gitkeep
+================================================
+[Empty file]
+
+
+================================================
+FILE: src/components/Icon/DribbbleIcon.tsx
+================================================
+import {FC, memo} from 'react';
+
+import Icon, {IconProps} from './Icon';
+
+const DribbbleIcon: FC<IconProps> = memo(props => (
+  <Icon {...props}>
+    <path
+      d="M61.1649 49.3018C54.0405 36.6965 46.4259 26.0712 44.8926 23.9633C32.6427 29.8077 23.4717 41.0853 20.5277 54.656C20.6516 54.656 20.7946 54.656 20.962 54.656C25.0594 54.656 42.0412 54.3265 61.1649 49.3018Z"
+      fill="currentColor"
+    />
+    <path
+      d="M71.7249 71.6664C47.36 80.143 38.1386 96.753 36.8667 99.2436C44.3847 105.036 53.7927 108.492 64 108.492C70.0882 108.492 75.8904 107.261 81.1806 105.04C80.4712 100.905 77.8771 87.5561 71.7753 71.65C71.7576 71.6541 71.7426 71.6609 71.7249 71.6664Z"
+      fill="currentColor"
+    />
+    <path
+      d="M93.3052 30.6819C85.474 23.8162 75.215 19.648 64 19.648C60.5494 19.648 57.1928 20.0456 53.9683 20.7946C55.7767 23.2375 63.3872 33.7512 70.3333 46.4545C85.3406 40.7762 92.066 32.3758 93.3052 30.6819Z"
+      fill="currentColor"
+    />
+    <path
+      d="M67.0448 64.2042C67.5336 64.049 68.0293 63.9006 68.5249 63.7603C67.4669 61.3842 66.3231 59.0053 65.1248 56.6591C45.3801 62.5212 26.2182 62.9801 20.702 62.9801C20.1913 62.9801 19.8019 62.976 19.5363 62.9705C19.5254 63.3368 19.5159 63.7018 19.5159 64.0681C19.5173 75.3498 23.7522 85.6565 30.7146 93.4999C32.5937 90.3966 44.8163 71.3886 67.0448 64.2042Z"
+      fill="currentColor"
+    />
+    <path
+      d="M121.191 0H6.80851C3.04885 0 0 3.04749 0 6.80851V121.191C0 124.953 3.04885 128 6.80851 128H121.191C124.953 128 128 124.953 128 121.191V6.80851C128 3.04749 124.953 0 121.191 0ZM64 116.582C34.9658 116.582 11.3484 92.9947 11.3484 64C11.3484 35.0053 34.9658 11.4192 64 11.4179C93.0315 11.4192 116.652 35.0053 116.652 64C116.652 92.9947 93.0315 116.582 64 116.582Z"
+      fill="currentColor"
+    />
+    <path
+      d="M80.6645 69.4686C86.1957 84.7265 88.5951 97.2392 89.1915 100.66C98.9304 93.9493 105.871 83.4669 107.881 71.3464C106.19 70.8303 98.9181 68.7959 89.6231 68.7986C86.7894 68.7946 83.7719 68.9866 80.6645 69.4686Z"
+      fill="currentColor"
+    />
+    <path
+      d="M74.0112 53.5653C75.008 55.616 75.9694 57.6994 76.8626 59.7991C77.1677 60.5086 77.4604 61.2167 77.7505 61.922C81.1942 61.4985 84.6284 61.3324 87.8911 61.3324C98.0058 61.3324 106.473 62.9161 108.469 63.3205C108.299 53.0832 104.645 43.6793 98.6403 36.2376C97.088 38.2516 89.5741 47.1517 74.0112 53.5653Z"
+      fill="currentColor"
+    />
+  </Icon>
+));
+
+export default DribbbleIcon;
+
+
+
+================================================
+FILE: src/components/Icon/FacebookIcon.tsx
+================================================
+import {FC, memo} from 'react';
+
+import Icon, {IconProps} from './Icon';
+
+const FacebookIcon: FC<IconProps> = memo(props => (
+  <Icon {...props}>
+    <path
+      d="M116.42 5.07H11.58a6.5 6.5 0 00-6.5 6.5v104.85a6.5 6.5 0 006.5 6.5H68V77.29H52.66V59.5H68V46.38c0-15.22 9.3-23.51 22.88-23.51a126 126 0 0113.72.7v15.91h-9.39c-7.39 0-8.82 3.51-8.82 8.66V59.5H104l-2.29 17.79H86.39v45.64h30a6.51 6.51 0 006.5-6.5V11.58a6.5 6.5 0 00-6.47-6.51z"
+      fill="currentColor"></path>
+  </Icon>
+));
+
+export default FacebookIcon;
+
+
+
+================================================
+FILE: src/components/Icon/GithubIcon.tsx
+================================================
+import {FC, memo} from 'react';
+
+import Icon, {IconProps} from './Icon';
+
+const GithubIcon: FC<IconProps> = memo(props => (
+  <Icon {...props}>
+    <path
+      clipRule="evenodd"
+      d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+      fillRule="evenodd"
+    />
+    <path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0" />
+  </Icon>
+));
+
+export default GithubIcon;
+
+
+
+================================================
+FILE: src/components/Icon/Icon.tsx
+================================================
+import {FC, memo} from 'react';
+
+export interface IconProps extends React.HTMLAttributes<SVGSVGElement> {
+  svgRef?: React.Ref<SVGSVGElement>;
+  transform?: string;
+}
+
+const Icon: FC<IconProps> = memo(({children, className, svgRef, transform, ...props}) => (
+  <svg
+    className={className}
+    fill="currentColor"
+    ref={svgRef}
+    transform={transform}
+    viewBox="0 0 128 128"
+    width="128"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}>
+    {children}
+  </svg>
+));
+
+export default Icon;
+
+
+
+================================================
+FILE: src/components/Icon/InstagramIcon.tsx
+================================================
+import {FC, memo} from 'react';
+
+import Icon, {IconProps} from './Icon';
+
+const InstagramIcon: FC<IconProps> = memo(props => (
+  <Icon {...props}>
+    <path
+      d="M92.6759 0H35.3226C15.8457 0 0 15.8465 0 35.3234V92.6766C0 112.154 15.8457 128 35.3226 128H92.6759C112.154 128 128 112.154 128 92.6766V35.3234C128.001 15.8465 112.154 0 92.6759 0ZM116.644 92.6766C116.644 105.892 105.892 116.643 92.6766 116.643H35.3226C22.1079 116.644 11.3568 105.892 11.3568 92.6766V35.3234C11.3568 22.1086 22.1079 11.3568 35.3226 11.3568H92.6759C105.891 11.3568 116.643 22.1086 116.643 35.3234V92.6766H116.644Z"
+      fill="currentColor"
+    />
+    <path
+      d="M64 31.0191C45.8133 31.0191 31.0176 45.8147 31.0176 64.0015C31.0176 82.1875 45.8133 96.9823 64 96.9823C82.1867 96.9823 96.9824 82.1875 96.9824 64.0015C96.9824 45.8147 82.1867 31.0191 64 31.0191ZM64 85.6248C52.0761 85.6248 42.3744 75.9246 42.3744 64.0007C42.3744 52.0761 52.0754 42.3751 64 42.3751C75.9246 42.3751 85.6256 52.0761 85.6256 64.0007C85.6256 75.9246 75.9239 85.6248 64 85.6248Z"
+      fill="currentColor"
+    />
+    <path
+      d="M98.3656 21.3893C96.1775 21.3893 94.0281 22.2752 92.4828 23.8273C90.9299 25.3718 90.0373 27.522 90.0373 29.7176C90.0373 31.9065 90.9307 34.0559 92.4828 35.608C94.0273 37.1526 96.1775 38.046 98.3656 38.046C100.561 38.046 102.704 37.1526 104.256 35.608C105.808 34.0559 106.694 31.9057 106.694 29.7176C106.694 27.522 105.808 25.3718 104.256 23.8273C102.711 22.2752 100.561 21.3893 98.3656 21.3893Z"
+      fill="currentColor"
+    />
+  </Icon>
+));
+
+export default InstagramIcon;
+
+
+
+================================================
+FILE: src/components/Icon/LinkedInIcon.tsx
+================================================
+import {FC, memo} from 'react';
+
+import Icon, {IconProps} from './Icon';
+
+const LinkedInIcon: FC<IconProps> = memo(props => (
+  <Icon {...props}>
+    <path
+      d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3zM39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1110.49-10.5 10.5 10.5 0 01-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z"
+      fill="currentColor"></path>
+  </Icon>
+));
+
+export default LinkedInIcon;
+
+
+
+================================================
+FILE: src/components/Icon/QuoteIcon.tsx
+================================================
+import {FC, memo} from 'react';
+
+import Icon, {IconProps} from './Icon';
+
+const QuoteIcon: FC<IconProps> = memo(props => (
+  <Icon {...props}>
+    <path
+      d="M26.3657 53.7076C27.9274 43.8912 40.1978 33.4056 49.791 33.1825C50.4603 33.1825 51.1296 32.9594 51.5758 32.5132C52.022 32.2901 52.4682 32.067 52.6913 31.3978C56.0377 25.151 54.253 20.2428 48.6755 16.2271C42.2057 11.542 31.9431 16.2271 26.8119 20.4659C13.8722 31.1747 0.709398 49.6914 1.37869 67.3166C-0.852289 79.1411 -0.406093 91.8573 2.94038 102.343C5.17136 109.036 11.6412 112.382 18.3342 112.829C25.0271 113.275 38.8592 115.283 44.8828 111.267C50.9065 107.251 51.3527 99.4427 52.022 92.7501C52.6913 85.3879 54.6991 71.5554 48.4524 65.7549C42.2057 60.1774 24.3578 66.2011 26.3657 53.7076Z"
+      fill="currentColor"
+    />
+    <path
+      d="M99.9881 53.7076C101.55 43.8912 113.82 33.4056 123.413 33.1825C124.083 33.1825 124.752 32.9594 125.198 32.5132C125.645 32.2901 126.091 32.067 126.314 31.3978C129.66 25.151 127.876 20.2428 122.298 16.2271C115.828 11.542 105.566 16.2271 100.434 20.4659C87.4946 31.1747 74.3318 49.6918 75.0011 67.3166C72.7701 79.1411 73.2163 91.8573 76.5624 102.343C78.7934 109.036 85.2632 112.382 91.9565 112.829C98.6495 113.275 112.482 115.283 118.505 111.267C124.528 107.251 124.975 99.4427 125.644 92.7501C126.314 85.3879 128.322 71.5554 122.075 65.7549C115.828 60.1774 97.7571 66.2011 99.9881 53.7076Z"
+      fill="currentColor"
+    />
+  </Icon>
+));
+
+export default QuoteIcon;
+
+
+
+================================================
+FILE: src/components/Icon/StackOverflowIcon.tsx
+================================================
+import {FC, memo} from 'react';
+
+import Icon, {IconProps} from './Icon';
+
+const StackOverflowIcon: FC<IconProps> = memo(props => (
+  <Icon {...props}>
+    <path d="M90.1875 114.162V83.027H104.062V128H0V83.027H13.875V114.162H90.1875Z" fill="currentColor" />
+    <path
+      d="M74.5781 0L65.2125 6.91892L99.5531 52.9297L108.919 46.0108L74.5781 0ZM90.1875 63.6541L46.1344 26.9838L53.4187 18.3351L97.4719 55.0054L90.1875 63.6541ZM31.5656 52.5838L83.5969 76.8L88.4531 66.4216L36.4219 42.2054L31.5656 52.5838ZM80.1281 89.9114L82.4869 79.706L26.64 68.1168L24.2812 79.5676L80.1281 89.9114V89.9114ZM79.7812 103.784H24.2812V93.4054H79.7812V103.784Z"
+      fill="currentColor"
+    />
+  </Icon>
+));
+
+export default StackOverflowIcon;
+
+
+
+================================================
+FILE: src/components/Icon/TwitterIcon.tsx
+================================================
+import {FC, memo} from 'react';
+
+import Icon, {IconProps} from './Icon';
+
+const TwitterIcon: FC<IconProps> = memo(props => (
+  <Icon {...props}>
+    <path
+      d="M40.254 127.637c48.305 0 74.719-48.957 74.719-91.403 0-1.39 0-2.777-.075-4.156 5.141-4.547 9.579-10.18 13.102-16.633-4.79 2.602-9.871 4.305-15.078 5.063 5.48-4.02 9.582-10.336 11.539-17.774-5.156 3.743-10.797 6.38-16.68 7.801-8.136-10.586-21.07-13.18-31.547-6.32-10.472 6.86-15.882 21.46-13.199 35.617C41.922 38.539 22.246 26.336 8.915 6.27 1.933 20.94 5.487 39.723 17.022 49.16c-4.148-.172-8.207-1.555-11.832-4.031v.41c0 15.273 8.786 28.438 21.02 31.492a21.596 21.596 0 01-11.863.543c3.437 13.094 13.297 22.07 24.535 22.328-9.305 8.918-20.793 13.75-32.617 13.72-2.094 0-4.188-.15-6.266-.446 12.008 9.433 25.98 14.441 40.254 14.422"
+      fill="currentColor"></path>
+  </Icon>
+));
+
+export default TwitterIcon;
+
+
+
+================================================
+FILE: src/components/Layout/Page.tsx
+================================================
+import {NextPage} from 'next';
+import Head from 'next/head';
+import {useRouter} from 'next/router';
+import {memo, PropsWithChildren} from 'react';
+
+import {HomepageMeta} from '../../data/dataDef';
+
+const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, description}) => {
+  const {asPath: pathname} = useRouter();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta content={description} name="description" />
+
+        {/* several domains list the same content, make sure google knows we mean this one. */}
+        <link href={`https://reactresume.com${pathname}`} key="canonical" rel="canonical" />
+
+        <link href={`${basePath}/favicon.ico`} rel="icon" sizes="any" />
+        <link href={`${basePath}/icon.svg`} rel="icon" type="image/svg+xml" />
+        <link href={`${basePath}/apple-touch-icon.png`} rel="apple-touch-icon" />
+        <link href={`${basePath}/site.webmanifest`} rel="manifest" />
+
+        {/* Open Graph : https://ogp.me/ */}
+        <meta content={title} property="og:title" />
+        <meta content={description} property="og:description" />
+        <meta content={`https://reactresume.com${pathname}`} property="og:url" />
+
+        {/* Twitter: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup */}
+        <meta content={title} name="twitter:title" />
+        <meta content={description} name="twitter:description" />
+      </Head>
+      {children}
+    </>
+  );
+});
+
+Page.displayName = 'Page';
+export default Page;
+
+
+
+================================================
+FILE: src/components/Layout/Section.tsx
+================================================
+import classNames from 'classnames';
+import {FC, memo, PropsWithChildren} from 'react';
+
+import {SectionId} from '../../data/data';
+
+const Section: FC<
+  PropsWithChildren<{sectionId: SectionId; sectionTitle?: string; noPadding?: boolean; className?: string}>
+> = memo(({children, sectionId, noPadding = false, className}) => {
+  return (
+    <section className={classNames(className, {'px-4 py-16 md:py-24 lg:px-8': !noPadding})} id={sectionId}>
+      <div className={classNames({'mx-auto max-w-screen-lg': !noPadding})}>{children}</div>
+    </section>
+  );
+});
+
+Section.displayName = 'Section';
+export default Section;
+
+
+
+================================================
+FILE: src/components/Sections/About.tsx
+================================================
+import classNames from 'classnames';
+import Image from 'next/image';
+import {FC, memo} from 'react';
+
+import {aboutData, SectionId} from '../../data/data';
+import Section from '../Layout/Section';
+
+const About: FC = memo(() => {
+  const {profileImageSrc, description, aboutItems} = aboutData;
+  return (
+    <Section className="bg-neutral-800" sectionId={SectionId.About}>
+      <div className={classNames('grid grid-cols-1 gap-y-4', {'md:grid-cols-4': !!profileImageSrc})}>
+        {!!profileImageSrc && (
+          <div className="col-span-1 flex justify-center md:justify-start">
+            <div className="relative h-24 w-24 overflow-hidden rounded-xl md:h-32 md:w-32">
+              <Image alt="about-me-image" className="h-full w-full object-cover" src={profileImageSrc} />
+            </div>
+          </div>
+        )}
+        <div className={classNames('col-span-1 flex flex-col gap-y-6', {'md:col-span-3': !!profileImageSrc})}>
+          <div className="flex flex-col gap-y-2">
+            <h2 className="text-2xl font-bold text-white">About me</h2>
+            <p className="prose prose-sm text-gray-300 sm:prose-base">{description}</p>
+          </div>
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {aboutItems.map(({label, text, Icon}, idx) => (
+              <li className="col-span-1 flex  items-start gap-x-2" key={idx}>
+                {Icon && <Icon className="h-5 w-5 text-white" />}
+                <span className="text-sm font-bold text-white">{label}:</span>
+                <span className=" text-sm text-gray-300">{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Section>
+  );
+});
+
+About.displayName = 'About';
+export default About;
+
+
+
+================================================
+FILE: src/components/Sections/Footer.tsx
+================================================
+import {ChevronUpIcon} from '@heroicons/react/24/solid';
+import {FC, memo} from 'react';
+
+import {SectionId} from '../../data/data';
+import Socials from '../Socials';
+
+const Footer: FC = memo(() => (
+  <div className="relative bg-neutral-900 px-4 pb-6 pt-12 sm:px-8 sm:pb-8 sm:pt-14">
+    <div className="absolute inset-x-0 -top-4 flex justify-center sm:-top-6">
+      <a
+        className="rounded-full bg-neutral-100 p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
+        href={`#${SectionId.Hero}`}>
+        <ChevronUpIcon className="h-6 w-6 bg-transparent sm:h-8 sm:w-8" />
+      </a>
+    </div>
+    <div className="flex flex-col items-center gap-y-6">
+      <div className="flex gap-x-4 text-neutral-500">
+        <Socials />
+      </div>
+      <a
+        className="-m-2 flex items-center gap-x-1 rounded-md p-2 ring-yellow focus:outline-none focus:ring-2"
+        href="https://reactresume.com">
+        {/* <BoltIcon className="h-5 w-5 text-yellow" /> */}
+        {/* <span>
+          Provided by <span className="text-white">React</span>
+          <span className="italic text-yellow">Resume</span>
+        </span> */}
+      </a>
+      {/* <span className="text-sm text-neutral-700">Â© Copyright {currentYear} Tim Baker</span> */}
+    </div>
+  </div>
+));
+
+Footer.displayName = 'Footer';
+export default Footer;
+
+
+
+================================================
+FILE: src/components/Sections/Header.tsx
+================================================
+import {Dialog, Transition} from '@headlessui/react';
+import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
+import classNames from 'classnames';
+import Link from 'next/link';
+import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
+
+import {SectionId} from '../../data/data';
+import {useNavObserver} from '../../hooks/useNavObserver';
+
+export const headerID = 'headerNav';
+
+const Header: FC = memo(() => {
+  const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
+  const navSections = useMemo(
+    () => [SectionId.About, SectionId.Resume, SectionId.Portfolio, /* SectionId.Testimonials, */ SectionId.Contact],
+    [],
+  );
+
+  const intersectionHandler = useCallback((section: SectionId | null) => {
+    section && setCurrentSection(section);
+  }, []);
+
+  useNavObserver(navSections.map(section => `#${section}`).join(','), intersectionHandler);
+
+  return (
+    <>
+      <MobileNav currentSection={currentSection} navSections={navSections} />
+      <DesktopNav currentSection={currentSection} navSections={navSections} />
+    </>
+  );
+});
+
+const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
+  ({navSections, currentSection}) => {
+    const baseClass =
+      '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 sm:hover:text-orange-500 text-neutral-100';
+    const activeClass = classNames(baseClass, 'text-orange-500');
+    const inactiveClass = classNames(baseClass, 'text-neutral-100');
+    return (
+      <header className="fixed top-0 z-50 hidden w-full bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
+        <nav className="flex justify-center gap-x-8">
+          {navSections.map(section => (
+            <NavItem
+              activeClass={activeClass}
+              current={section === currentSection}
+              inactiveClass={inactiveClass}
+              key={section}
+              section={section}
+            />
+          ))}
+        </nav>
+      </header>
+    );
+  },
+);
+
+const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
+  ({navSections, currentSection}) => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const toggleOpen = useCallback(() => {
+      setIsOpen(!isOpen);
+    }, [isOpen]);
+
+    const baseClass =
+      'p-2 rounded-md first-letter:uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500';
+    const activeClass = classNames(baseClass, 'bg-neutral-900 text-white font-bold');
+    const inactiveClass = classNames(baseClass, 'text-neutral-200 font-medium');
+    return (
+      <>
+        <button
+          aria-label="Menu Button"
+          className="fixed right-2 top-2 z-40 rounded-md bg-orange-500 p-2 ring-offset-gray-800/60 hover:bg-orange-400 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 sm:hidden"
+          onClick={toggleOpen}>
+          <Bars3BottomRightIcon className="h-8 w-8 text-white" />
+          <span className="sr-only">Open sidebar</span>
+        </button>
+        <Transition.Root as={Fragment} show={isOpen}>
+          <Dialog as="div" className="fixed inset-0 z-40 flex sm:hidden" onClose={toggleOpen}>
+            <Transition.Child
+              as={Fragment}
+              enter="transition-opacity ease-linear duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="transition-opacity ease-linear duration-300"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0">
+              <Dialog.Overlay className="fixed inset-0 bg-stone-900 bg-opacity-75" />
+            </Transition.Child>
+            <Transition.Child
+              as={Fragment}
+              enter="transition ease-in-out duration-300 transform"
+              enterFrom="-translate-x-full"
+              enterTo="translate-x-0"
+              leave="transition ease-in-out duration-300 transform"
+              leaveFrom="translate-x-0"
+              leaveTo="-translate-x-full">
+              <div className="relative w-4/5 bg-stone-800">
+                <nav className="mt-5 flex flex-col gap-y-2 px-2">
+                  {navSections.map(section => (
+                    <NavItem
+                      activeClass={activeClass}
+                      current={section === currentSection}
+                      inactiveClass={inactiveClass}
+                      key={section}
+                      onClick={toggleOpen}
+                      section={section}
+                    />
+                  ))}
+                </nav>
+              </div>
+            </Transition.Child>
+          </Dialog>
+        </Transition.Root>
+      </>
+    );
+  },
+);
+
+const NavItem: FC<{
+  section: string;
+  current: boolean;
+  activeClass: string;
+  inactiveClass: string;
+  onClick?: () => void;
+}> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
+  return (
+    <Link
+      className={classNames(current ? activeClass : inactiveClass)}
+      href={`#${section}`}
+      key={section}
+      onClick={onClick}>
+      {section}
+    </Link>
+  );
+});
+
+Header.displayName = 'Header';
+export default Header;
+
+
+
+================================================
+FILE: src/components/Sections/Hero.tsx
+================================================
+import {ChevronDownIcon} from '@heroicons/react/24/outline';
+import classNames from 'classnames';
+import Image from 'next/image';
+import {FC, memo} from 'react';
+
+import {heroData, SectionId} from '../../data/data';
+import Section from '../Layout/Section';
+import Socials from '../Socials';
+
+const Hero: FC = memo(() => {
+  const {imageSrc, name, description, actions} = heroData;
+
+  return (
+    <Section noPadding sectionId={SectionId.Hero}>
+      <div className="relative flex h-screen w-full items-center justify-center">
+        <Image
+          alt={`${name}-image`}
+          className="absolute z-0 h-full w-full object-cover"
+          placeholder="blur"
+          priority
+          src={imageSrc}
+        />
+        <div className="z-10  max-w-screen-lg px-4 lg:px-0">
+          <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
+            <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-7xl">{name}</h1>
+            {description}
+            <div className="flex gap-x-4 text-neutral-100">
+              <Socials />
+            </div>
+            <div className="flex w-full justify-center gap-x-4">
+              {actions.map(({href, text, primary, Icon}) => (
+                <a
+                  className={classNames(
+                    'flex gap-x-2 rounded-full border-2 bg-none px-4 py-2 text-sm font-medium text-white ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
+                    primary ? 'border-orange-500 ring-orange-500' : 'border-white ring-white',
+                  )}
+                  href={href}
+                  key={text}>
+                  {text}
+                  {Icon && <Icon className="h-5 w-5 text-white sm:h-6 sm:w-6" />}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="absolute inset-x-0 bottom-6 flex justify-center">
+          <a
+            className="rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
+            href={`#${SectionId.About}`}>
+            <ChevronDownIcon className="h-5 w-5 bg-transparent sm:h-6 sm:w-6" />
+          </a>
+        </div>
+      </div>
+    </Section>
+  );
+});
+
+Hero.displayName = 'Hero';
+export default Hero;
+
+
+
+================================================
+FILE: src/components/Sections/Portfolio.tsx
+================================================
+import {ArrowTopRightOnSquareIcon} from '@heroicons/react/24/outline';
+import classNames from 'classnames';
+import Image from 'next/image';
+import {FC, memo, MouseEvent, useCallback, useEffect, useRef, useState} from 'react';
+
+import {isMobile} from '../../config';
+import {portfolioItems, SectionId} from '../../data/data';
+import {PortfolioItem} from '../../data/dataDef';
+import useDetectOutsideClick from '../../hooks/useDetectOutsideClick';
+import Section from '../Layout/Section';
+
+const Portfolio: FC = memo(() => {
+  return (
+    <Section className="bg-neutral-800" sectionId={SectionId.Portfolio}>
+      <div className="flex flex-col gap-y-8">
+        <h2 className="self-center text-xl font-bold text-white">Check out some of my work</h2>
+        <div className=" w-full columns-2 md:columns-3 lg:columns-4">
+          {portfolioItems.map((item, index) => {
+            const {title, image} = item;
+            return (
+              <div className="pb-6" key={`${title}-${index}`}>
+                <div
+                  className={classNames(
+                    'relative h-max w-full overflow-hidden rounded-lg shadow-lg shadow-black/30 lg:shadow-xl',
+                  )}>
+                  <Image alt={title} className="h-full w-full" placeholder="blur" src={image} />
+                  <ItemOverlay item={item} />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </Section>
+  );
+});
+
+Portfolio.displayName = 'Portfolio';
+export default Portfolio;
+
+const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, description}}) => {
+  const [mobile, setMobile] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
+  const linkRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    // Avoid hydration styling errors by setting mobile in useEffect
+    if (isMobile) {
+      setMobile(true);
+    }
+  }, []);
+  useDetectOutsideClick(linkRef, () => setShowOverlay(false));
+
+  const handleItemClick = useCallback(
+    (event: MouseEvent<HTMLElement>) => {
+      if (mobile && !showOverlay) {
+        event.preventDefault();
+        setShowOverlay(!showOverlay);
+      }
+    },
+    [mobile, showOverlay],
+  );
+
+  return (
+    <a
+      className={classNames(
+        'absolute inset-0 h-full w-full  bg-gray-900 transition-all duration-300',
+        {'opacity-0 hover:opacity-80': !mobile},
+        showOverlay ? 'opacity-80' : 'opacity-0',
+      )}
+      href={url}
+      onClick={handleItemClick}
+      ref={linkRef}
+      target="_blank">
+      <div className="relative h-full w-full p-4">
+        <div className="flex h-full w-full flex-col gap-y-2 overflow-y-auto overscroll-contain">
+          <h2 className="text-center font-bold text-white opacity-100">{title}</h2>
+          <p className="text-xs text-white opacity-100 sm:text-sm">{description}</p>
+        </div>
+        <ArrowTopRightOnSquareIcon className="absolute bottom-1 right-1 h-4 w-4 shrink-0 text-white sm:bottom-2 sm:right-2" />
+      </div>
+    </a>
+  );
+});
+
+
+
+================================================
+FILE: src/components/Sections/Testimonials.tsx
+================================================
+import classNames from 'classnames';
+import {FC, memo, UIEventHandler, useCallback, useEffect, useMemo, useRef, useState} from 'react';
+
+import {isApple, isMobile} from '../../config';
+import {SectionId, testimonial} from '../../data/data';
+import {Testimonial} from '../../data/dataDef';
+import useInterval from '../../hooks/useInterval';
+import useWindow from '../../hooks/useWindow';
+import QuoteIcon from '../Icon/QuoteIcon';
+import Section from '../Layout/Section';
+
+const Testimonials: FC = memo(() => {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [scrollValue, setScrollValue] = useState(0);
+  const [parallaxEnabled, setParallaxEnabled] = useState(false);
+
+  const itemWidth = useRef(0);
+  const scrollContainer = useRef<HTMLDivElement>(null);
+
+  const {width} = useWindow();
+
+  const {imageSrc, testimonials} = testimonial;
+
+  const resolveSrc = useMemo(() => {
+    if (!imageSrc) return undefined;
+    return typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
+  }, [imageSrc]);
+
+  // Mobile iOS doesn't allow background-fixed elements
+  useEffect(() => {
+    setParallaxEnabled(!(isMobile && isApple));
+  }, []);
+
+  useEffect(() => {
+    itemWidth.current = scrollContainer.current ? scrollContainer.current.offsetWidth : 0;
+  }, [width]);
+
+  useEffect(() => {
+    if (scrollContainer.current) {
+      const newIndex = Math.round(scrollContainer.current.scrollLeft / itemWidth.current);
+      setActiveIndex(newIndex);
+    }
+  }, [itemWidth, scrollValue]);
+
+  const setTestimonial = useCallback(
+    (index: number) => () => {
+      if (scrollContainer !== null && scrollContainer.current !== null) {
+        scrollContainer.current.scrollLeft = itemWidth.current * index;
+      }
+    },
+    [],
+  );
+  const next = useCallback(() => {
+    if (activeIndex + 1 === testimonials.length) {
+      setTestimonial(0)();
+    } else {
+      setTestimonial(activeIndex + 1)();
+    }
+  }, [activeIndex, setTestimonial, testimonials.length]);
+
+  const handleScroll = useCallback<UIEventHandler<HTMLDivElement>>(event => {
+    setScrollValue(event.currentTarget.scrollLeft);
+  }, []);
+
+  useInterval(next, 10000);
+
+  // If no testimonials, don't render the section
+  if (!testimonials.length) {
+    return null;
+  }
+
+  return (
+    <Section noPadding sectionId={SectionId.Testimonials}>
+      <div
+        className={classNames(
+          'flex w-full items-center justify-center bg-cover bg-center px-4 py-16 md:py-24 lg:px-8',
+          parallaxEnabled && 'bg-fixed',
+          {'bg-neutral-700': !imageSrc},
+        )}
+        style={imageSrc ? {backgroundImage: `url(${resolveSrc}`} : undefined}>
+        <div className="z-10 w-full max-w-screen-md px-4 lg:px-0">
+          <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/60 p-6 shadow-lg">
+            <div
+              className="no-scrollbar flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
+              onScroll={handleScroll}
+              ref={scrollContainer}>
+              {testimonials.map((testimonial, index) => {
+                const isActive = index === activeIndex;
+                return (
+                  <Testimonial isActive={isActive} key={`${testimonial.name}-${index}`} testimonial={testimonial} />
+                );
+              })}
+            </div>
+            <div className="flex gap-x-4">
+              {[...Array(testimonials.length)].map((_, index) => {
+                const isActive = index === activeIndex;
+                return (
+                  <button
+                    className={classNames(
+                      'h-3 w-3 rounded-full bg-gray-300 transition-all duration-500 sm:h-4 sm:w-4',
+                      isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-60',
+                    )}
+                    disabled={isActive}
+                    key={`select-button-${index}`}
+                    onClick={setTestimonial(index)}></button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+});
+
+const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
+  ({testimonial: {text, name, image}, isActive}) => (
+    <div
+      className={classNames(
+        'flex w-full shrink-0 snap-start snap-always flex-col items-start gap-y-4 p-2 transition-opacity duration-1000 sm:flex-row sm:gap-x-6',
+        isActive ? 'opacity-100' : 'opacity-0',
+      )}>
+      {image ? (
+        <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
+          <QuoteIcon className="absolute -left-2 -top-2 h-4 w-4 stroke-black text-white" />
+          <img className="h-full w-full rounded-full" src={image} />
+        </div>
+      ) : (
+        <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />
+      )}
+      <div className="flex flex-col gap-y-4">
+        <p className="prose prose-sm font-medium italic text-white sm:prose-base">{text}</p>
+        <p className="text-xs italic text-white sm:text-sm md:text-base lg:text-lg">-- {name}</p>
+      </div>
+    </div>
+  ),
+);
+
+export default Testimonials;
+
+
+
+================================================
+FILE: src/components/Sections/Contact/ContactForm.tsx
+================================================
+import {FC, memo, useCallback, useMemo, useState} from 'react';
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+const ContactForm: FC = memo(() => {
+  const defaultData = useMemo(
+    () => ({
+      name: '',
+      email: '',
+      message: '',
+    }),
+    [],
+  );
+
+  const [data, setData] = useState<FormData>(defaultData);
+
+  const onChange = useCallback(
+    <T extends HTMLInputElement | HTMLTextAreaElement>(event: React.ChangeEvent<T>): void => {
+      const {name, value} = event.target;
+
+      const fieldData: Partial<FormData> = {[name]: value};
+
+      setData({...data, ...fieldData});
+    },
+    [data],
+  );
+
+  const handleSendMessage = useCallback(
+    async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      /**
+       * This is a good starting point to wire up your form submission logic
+       * */
+      console.log('Data to send: ', data);
+    },
+    [data],
+  );
+
+  const inputClasses =
+    'bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm';
+
+  return (
+    <form className="grid min-h-[320px] grid-cols-1 gap-y-4" method="POST" onSubmit={handleSendMessage}>
+      <input className={inputClasses} name="name" onChange={onChange} placeholder="Name" required type="text" />
+      <input
+        autoComplete="email"
+        className={inputClasses}
+        name="email"
+        onChange={onChange}
+        placeholder="Email"
+        required
+        type="email"
+      />
+      <textarea
+        className={inputClasses}
+        maxLength={250}
+        name="message"
+        onChange={onChange}
+        placeholder="Message"
+        required
+        rows={6}
+      />
+      <button
+        aria-label="Submit contact form"
+        className="w-max rounded-full border-2 border-orange-600 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
+        type="submit">
+        Send Message
+      </button>
+    </form>
+  );
+});
+
+ContactForm.displayName = 'ContactForm';
+export default ContactForm;
+
+
+
+================================================
+FILE: src/components/Sections/Contact/index.tsx
+================================================
+import {DevicePhoneMobileIcon, EnvelopeIcon, MapPinIcon} from '@heroicons/react/24/outline';
+import classNames from 'classnames';
+import {FC, memo} from 'react';
+
+import {contact, SectionId} from '../../../data/data';
+import {ContactType, ContactValue} from '../../../data/dataDef';
+import FacebookIcon from '../../Icon/FacebookIcon';
+import GithubIcon from '../../Icon/GithubIcon';
+import InstagramIcon from '../../Icon/InstagramIcon';
+import LinkedInIcon from '../../Icon/LinkedInIcon';
+import TwitterIcon from '../../Icon/TwitterIcon';
+import Section from '../../Layout/Section';
+import ContactForm from './ContactForm';
+
+const ContactValueMap: Record<ContactType, ContactValue> = {
+  [ContactType.Email]: {Icon: EnvelopeIcon, srLabel: 'Email'},
+  [ContactType.Phone]: {Icon: DevicePhoneMobileIcon, srLabel: 'Phone'},
+  [ContactType.Location]: {Icon: MapPinIcon, srLabel: 'Location'},
+  [ContactType.Github]: {Icon: GithubIcon, srLabel: 'Github'},
+  [ContactType.LinkedIn]: {Icon: LinkedInIcon, srLabel: 'LinkedIn'},
+  [ContactType.Facebook]: {Icon: FacebookIcon, srLabel: 'Facebook'},
+  [ContactType.Twitter]: {Icon: TwitterIcon, srLabel: 'Twitter'},
+  [ContactType.Instagram]: {Icon: InstagramIcon, srLabel: 'Instagram'},
+};
+
+const Contact: FC = memo(() => {
+  const {headerText, description, items} = contact;
+  return (
+    <Section className="bg-neutral-800" sectionId={SectionId.Contact}>
+      <div className="flex flex-col gap-y-6">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center">
+          <EnvelopeIcon className="hidden h-16 w-16 text-white md:block" />
+          <h2 className="text-2xl font-bold text-white">{headerText}</h2>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="order-2 col-span-1 md:order-1 ">
+            <ContactForm />
+          </div>
+          <div className="order-1 col-span-1 flex flex-col gap-y-4 md:order-2">
+            <p className="prose leading-6 text-neutral-300">{description}</p>
+            <dl className="flex flex-col space-y-4 text-base text-neutral-500 sm:space-y-2">
+              {items.map(({type, text, href}) => {
+                const {Icon, srLabel} = ContactValueMap[type];
+                return (
+                  <div key={srLabel}>
+                    <dt className="sr-only">{srLabel}</dt>
+                    <dd className="flex items-center">
+                      <a
+                        className={classNames(
+                          '-m-2 flex rounded-md p-2 text-neutral-300 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500',
+                          {'hover:text-white': href},
+                        )}
+                        href={href}
+                        target="_blank">
+                        <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-neutral-100 sm:h-5 sm:w-5" />
+                        <span className="ml-3 text-sm sm:text-base">{text}</span>
+                      </a>
+                    </dd>
+                  </div>
+                );
+              })}
+            </dl>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+});
+
+Contact.displayName = 'About';
+export default Contact;
+
+
+
+================================================
+FILE: src/components/Sections/Resume/index.tsx
+================================================
+import {FC, memo} from 'react';
+
+import {education, experience, SectionId, skills} from '../../../data/data';
+import Section from '../../Layout/Section';
+import ResumeSection from './ResumeSection';
+import {SkillGroup} from './Skills';
+import TimelineItem from './TimelineItem';
+
+const Resume: FC = memo(() => {
+  return (
+    <Section className="bg-neutral-100" sectionId={SectionId.Resume}>
+      <div className="flex flex-col divide-y-2 divide-neutral-300">
+        <ResumeSection title="Education">
+          {education.map((item, index) => (
+            <TimelineItem item={item} key={`${item.title}-${index}`} />
+          ))}
+        </ResumeSection>
+        <ResumeSection title="Work">
+          {experience.map((item, index) => (
+            <TimelineItem item={item} key={`${item.title}-${index}`} />
+          ))}
+        </ResumeSection>
+        <ResumeSection title="Skills">
+          <p className="pb-8">Here you can show a snapshot of your skills to show off to employers</p>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {skills.map((skillgroup, index) => (
+              <SkillGroup key={`${skillgroup.name}-${index}`} skillGroup={skillgroup} />
+            ))}
+          </div>
+        </ResumeSection>
+      </div>
+    </Section>
+  );
+});
+
+Resume.displayName = 'Resume';
+export default Resume;
+
+
+
+================================================
+FILE: src/components/Sections/Resume/ResumeSection.tsx
+================================================
+import {FC, memo, PropsWithChildren} from 'react';
+
+const ResumeSection: FC<PropsWithChildren<{title: string}>> = memo(({title, children}) => {
+  return (
+    <div className="grid grid-cols-1 gap-y-4 py-8 first:pt-0 last:pb-0  md:grid-cols-4">
+      <div className="col-span-1 flex justify-center md:justify-start">
+        <div className="relative h-max">
+          <h2 className="text-xl font-bold uppercase text-neutral-800">{title}</h2>
+          <span className="absolute inset-x-0 -bottom-1 border-b-2 border-orange-400" />
+        </div>
+      </div>
+      <div className="col-span-1 flex flex-col md:col-span-3">{children}</div>
+    </div>
+  );
+});
+
+ResumeSection.displayName = 'ResumeSection';
+export default ResumeSection;
+
+
+
+================================================
+FILE: src/components/Sections/Resume/Skills.tsx
+================================================
+import {FC, memo, PropsWithChildren, useMemo} from 'react';
+
+import {Skill as SkillType, SkillGroup as SkillGroupType} from '../../../data/dataDef';
+
+export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = memo(({skillGroup}) => {
+  const {name, skills} = skillGroup;
+  return (
+    <div className="flex flex-col">
+      <span className="text-center text-lg font-bold">{name}</span>
+      <div className="flex flex-col gap-y-2">
+        {skills.map((skill, index) => (
+          <Skill key={`${skill.name}-${index}`} skill={skill} />
+        ))}
+      </div>
+    </div>
+  );
+});
+
+SkillGroup.displayName = 'SkillGroup';
+
+export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
+  const {name, level, max = 10} = skill;
+  const percentage = useMemo(() => Math.round((level / max) * 100), [level, max]);
+
+  return (
+    <div className="flex flex-col">
+      <span className="ml-2 text-sm font-medium">{name}</span>
+      <div className="h-5 w-full overflow-hidden rounded-full bg-neutral-300">
+        <div className="h-full rounded-full bg-orange-400" style={{width: `${percentage}%`}} />
+      </div>
+    </div>
+  );
+});
+
+Skill.displayName = 'Skill';
+
+
+
+================================================
+FILE: src/components/Sections/Resume/TimelineItem.tsx
+================================================
+import {FC, memo} from 'react';
+
+import {TimelineItem} from '../../../data/dataDef';
+
+const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
+  const {title, date, location, content} = item;
+  return (
+    <div className="flex flex-col pb-8 text-center last:pb-0 md:text-left">
+      <div className="flex flex-col pb-4">
+        <h2 className="text-xl font-bold">{title}</h2>
+        <div className="flex items-center justify-center gap-x-2 md:justify-start">
+          <span className="flex-1 text-sm font-medium italic sm:flex-none">{location}</span>
+          <span>â€¢</span>
+          <span className="flex-1 text-sm sm:flex-none">{date}</span>
+        </div>
+      </div>
+      {content}
+    </div>
+  );
+});
+
+TimelineItem.displayName = 'TimelineItem';
+export default TimelineItem;
+
+
+
+================================================
+FILE: src/data/data.tsx
+================================================
+import {
+  AcademicCapIcon,
+  ArrowDownTrayIcon,
+  BuildingOffice2Icon,
+  CalendarIcon,
+  FlagIcon,
+  MapIcon,
+  SparklesIcon,
+} from '@heroicons/react/24/outline';
+
+import GithubIcon from '../components/Icon/GithubIcon';
+import LinkedInIcon from '../components/Icon/LinkedInIcon';
+import heroImage from '../images/header-background.webp';
+import profilepic from '../images/profilepic.jpg';
+import testimonialImage from '../images/testimonial.webp';
+import {
+  About,
+  ContactSection,
+  ContactType,
+  Hero,
+  HomepageMeta,
+  PortfolioItem,
+  SkillGroup,
+  Social,
+  TestimonialSection,
+  TimelineItem,
+} from './dataDef';
+
+/**
+ * Page meta data
+ */
+export const homePageMeta: HomepageMeta = {
+  title: 'Alireza Rahimpanah - Frontend Developer',
+  description: "Frontend developer specialized in React, Next.js, Tailwind, and Bootstrap.",
+};
+
+/**
+ * Section definition
+ */
+export const SectionId = {
+  Hero: 'hero',
+  About: 'about',
+  Contact: 'contact',
+  Portfolio: 'portfolio',
+  Resume: 'resume',
+  Skills: 'skills',
+  Stats: 'stats',
+  Testimonials: 'testimonials',
+} as const;
+
+export type SectionId = (typeof SectionId)[keyof typeof SectionId];
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
+/**
+ * Hero section
+ */
+export const heroData: Hero = {
+  imageSrc: heroImage,
+  name: `I'm Alireza Rahimpanah.`,
+  description: (
+    <>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+        Frontend developer with 2+ years of experience in HTML, CSS, JavaScript, and TypeScript. Skilled in building responsive UIs with <strong className="text-stone-100">React</strong>, <strong className="text-stone-100">Next.js</strong>, <strong className="text-stone-100">Bootstrap</strong>, and <strong className="text-stone-100">Tailwind CSS</strong>.
+      </p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+        Focused on clean code, efficient design, and delivering user-friendly web applications.
+      </p>
+    </>
+  ),
+  actions: [
+    {
+      href: `${basePath}/Alireza-Rahimpanah-main.pdf`,
+      text: 'Resume',
+      primary: true,
+      Icon: ArrowDownTrayIcon,
+    },
+    {
+      href: `#${SectionId.Contact}`,
+      text: 'Contact',
+      primary: false,
+    },
+  ],
+};
+
+/**
+ * About section
+ */
+export const aboutData: About = {
+  profileImageSrc: profilepic,
+  description: `Frontend developer skilled in React, Next.js, Tailwind, and Bootstrap. Over 2 years of experience building responsive and accessible web apps. Eager to learn and solve problems efficiently.`,
+  aboutItems: [
+    {label: 'Location', text: 'mashhad, South Khorasan, Iran', Icon: MapIcon},
+    {label: 'Age', text: '20', Icon: CalendarIcon},
+    {label: 'Nationality', text: 'Iranian', Icon: FlagIcon},
+    {label: 'Interests', text: 'Frontend Development, UI/UX, Learning New Tech', Icon: SparklesIcon},
+    {label: 'Study', text: 'BSc Computer Engineering, University of Birjand', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Frontend Developer Intern at Jahad-e Daneshgahi', Icon: BuildingOffice2Icon},
+  ],
+};
+
+/**
+ * Skills section
+ */
+export const skills: SkillGroup[] = [
+  {
+    name: 'Programming Languages',
+    skills: [
+      {name: 'JavaScript', level: 8},
+      {name: 'TypeScript', level: 7},
+      {name: 'Python', level: 5},
+    ],
+  },
+  {
+    name: 'Frontend Frameworks',
+    skills: [
+      {name: 'React', level: 8},
+      {name: 'Next.js', level: 7},
+      {name: 'Bootstrap', level: 8},
+      {name: 'Tailwind CSS', level: 7},
+    ],
+  },
+  {
+    name: 'Tools & Others',
+    skills: [
+      {name: 'Git', level: 7},
+      {name: 'REST APIs', level: 7},
+      {name: 'Jira', level: 5},
+    ],
+  },
+];
+
+/**
+ * Portfolio section
+ */
+export const portfolioItems: PortfolioItem[] = [
+  {
+    title: 'game hub',
+    description: 'a store to sell games using react',
+    url: 'https://github.com/say-alireza/gamehub-react', // Ù„ÛŒÙ†Ú© GitHub Ù¾Ø±ÙˆÚ˜Ù‡
+    image: require('../images/portfolio/portfolio-1.jpg'),
+  },
+  {
+    title: 'shopping pannel', 
+    description: 'a shopping panel built with React and Bootstrap',
+    url: 'https://github.com/say-alireza/bootstrap-project-shopping-pannel', // Ù„ÛŒÙ†Ú© GitHub Ù¾Ø±ÙˆÚ˜Ù‡
+    image: require('../images/portfolio/portfolio-2.jpg'),
+  },
+  {
+    title: 'trading bot panel',
+    description: 'a trading bot panel built with bootstrap and Django',
+    url: 'https://github.com/say-alireza/trade-bot-pannel-front-end', // Ù„ÛŒÙ†Ú© GitHub Ù¾Ø±ÙˆÚ˜Ù‡
+    image: require('../images/portfolio/portfolio-3.jpg'),
+  },
+  // {
+  //   title: 'Project title 4',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://reactresume.com',
+  //   image: require('../images/portfolio/portfolio-4.jpg'),
+  // },
+  // {
+  //   title: 'Project title 5',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://reactresume.com',
+  //   image: require('../images/portfolio/portfolio-5.jpg'),
+  // },
+  // {
+  //   title: 'Project title 6',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://reactresume.com',
+  //   image: require('../images/portfolio/portfolio-6.jpg'),
+  // },
+  // {
+  //   title: 'Project title 7',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://reactresume.com',
+  //   image: require('../images/portfolio/portfolio-7.jpg'),
+  // },
+  // {
+  //   title: 'Project title 8',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://reactresume.com',
+  //   image: require('../images/portfolio/portfolio-8.jpg'),
+  // },
+  // {
+  //   title: 'Project title 9',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://reactresume.com',
+  //   image: require('../images/portfolio/portfolio-9.jpg'),
+  // },
+  // {
+  //   title: 'Project title 10',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://reactresume.com',
+  //   image: require('../images/portfolio/portfolio-10.jpg'),
+  // },
+  // {
+  //   title: 'Project title 11',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://reactresume.com',
+  //   image: require('../images/portfolio/portfolio-11.jpg'),
+  // },
+];
+
+/**
+ * Education timeline
+ */
+export const education: TimelineItem[] = [
+  {
+    date: '2023 - Present',
+    location: 'University of Birjand',
+    title: 'BSc in Computer Engineering',
+    content: <p>Currently studying computer engineering with a focus on software development and frontend technologies.</p>,
+  },
+];
+
+/**
+ * Experience timeline
+ */
+export const experience: TimelineItem[] = [
+  {
+    date: 'Dec 2023 - Aug 2024',
+    location: 'Jahad-e Daneshgahi, Birjand',
+    title: 'Frontend Developer Intern',
+    content: (
+      <p>
+        Developed product pages using Bootstrap and JavaScript, resolved responsive layout issues, built React interfaces consuming REST APIs, learned Git and Jira, and contributed to team projects.
+      </p>
+    ),
+  },
+  {
+    date: 'Sep 2024 - Jan 2025',
+    location: 'Iran',
+    title: 'Team Project: Trade Bot Panel',
+    content: (
+      <p>
+        Collaborated with backend developers to implement Django functionality, including form handling, routing, and API endpoints, while contributing frontend interface improvements and documentation.
+      </p>
+    ),
+  },
+];
+
+/**
+ * Testimonial section
+ */
+export const testimonial: TestimonialSection = {
+  imageSrc: testimonialImage,
+  testimonials: [
+    {
+      name: 'John Doe',
+      text: 'Alireza is a dedicated developer who delivers quality work on time.',
+      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
+    },
+  ],
+};
+
+/**
+ * Contact section
+ */
+export const contact: ContactSection = {
+  headerText: 'Get in touch.',
+  description: 'Feel free to reach out for collaborations or job opportunities.',
+  items: [
+    {
+      type: ContactType.Email,
+      text: 'a.rahimpanah71@gmail.com',
+      href: 'mailto:a.rahimpanah71@gmail.com',
+    },
+    {
+      type: ContactType.Location,
+      text: 'Birjand, South Khorasan, Iran',
+      href: 'https://www.google.com/maps/place/Birjand',
+    },
+  ],
+};
+
+/**
+ * Social links
+ */
+export const socialLinks: Social[] = [
+  {
+    label: 'Github',
+    Icon: GithubIcon,
+    href: 'https://github.com/say-alireza',
+  },
+  {
+    label: 'LinkedIn',
+    Icon: LinkedInIcon,
+    href: 'https://linkedin.com/in/alireza-rahimpanah-b7010a301',
+  },
+];
+
+
+
+================================================
+FILE: src/data/dataDef.ts
+================================================
+import {StaticImageData} from 'next/image';
+import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
+
+import {IconProps} from '../components/Icon/Icon';
+
+export interface HomepageMeta {
+  title: string;
+  description: string;
+  ogImageUrl?: string;
+  twitterCardType?: 'summary' | 'summary_large';
+  twitterTitle?: string;
+  twitterSite?: string;
+  twitterCreator?: string;
+  twitterDomain?: string;
+  twitterUrl?: string;
+  twitterDescription?: string;
+  twitterImageUrl?: string;
+}
+
+/**
+ * Hero section
+ */
+export interface Hero {
+  imageSrc: string;
+  name: string;
+  description: JSX.Element;
+  actions: HeroActionItem[];
+}
+
+interface HeroActionItem {
+  href: string;
+  text: string;
+  primary?: boolean;
+  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+}
+
+/**
+ * About section
+ */
+export interface About {
+  profileImageSrc?: string;
+  description: string;
+  aboutItems: AboutItem[];
+}
+
+export interface AboutItem {
+  label: string;
+  text: string;
+  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+}
+
+/**
+ * Stat section
+ */
+export interface Stat {
+  title: string;
+  value: number;
+  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+}
+
+/**
+ * Skills section
+ */
+
+export interface Skill {
+  name: string;
+  level: number;
+  max?: number;
+}
+
+export interface SkillGroup {
+  name: string;
+  skills: Skill[];
+}
+
+/**
+ * Portfolio section
+ */
+export interface PortfolioItem {
+  title: string;
+  description: string;
+  url: string;
+  image: string | StaticImageData;
+}
+
+/**
+ * Resume section
+ */
+export interface TimelineItem {
+  date: string;
+  location: string;
+  title: string;
+  content: JSX.Element;
+}
+
+/**
+ * Testimonial section
+ */
+export interface TestimonialSection {
+  imageSrc?: string | StaticImageData;
+  testimonials: Testimonial[];
+}
+
+export interface Testimonial {
+  image?: string;
+  name: string;
+  text: string;
+}
+
+/**
+ * Contact section
+ */
+export interface ContactSection {
+  headerText?: string;
+  description: string;
+  items: ContactItem[];
+}
+
+export const ContactType = {
+  Email: 'Email',
+  Phone: 'Phone',
+  Location: 'Location',
+  Github: 'Github',
+  LinkedIn: 'LinkedIn',
+  Facebook: 'Facebook',
+  Twitter: 'Twitter',
+  Instagram: 'Instagram',
+} as const;
+
+export type ContactType = (typeof ContactType)[keyof typeof ContactType];
+
+export interface ContactItem {
+  type: ContactType;
+  text: string;
+  href?: string;
+}
+
+export interface ContactValue {
+  Icon: FC<IconProps> | ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+  srLabel: string;
+}
+
+/**
+ * Social items
+ */
+export interface Social {
+  label: string;
+  Icon: FC<IconProps>;
+  href: string;
+}
+
+
+
+================================================
+FILE: src/hooks/useDetectOutsideClick.ts
+================================================
+import {RefObject, useEffect} from 'react';
+
+const useDetectOutsideClick = <T extends HTMLElement>(ref: RefObject<T>, handler: (event: Event) => void) => {
+  useEffect(() => {
+    const listener = (event: Event) => {
+      // Do nothing if clicking ref's element or descendent elements
+      if (!ref.current || ref.current.contains((event?.target as Node) || null)) {
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
+    return () => {
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
+    };
+  }, [ref, handler]);
+};
+
+export default useDetectOutsideClick;
+
+
+
+================================================
+FILE: src/hooks/useInterval.ts
+================================================
+import {useEffect, useRef} from 'react';
+
+function useInterval(callback: () => void, delay: number | null) {
+  const savedCallback = useRef(callback);
+
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  useEffect(() => {
+    if (!delay && delay !== 0) {
+      return;
+    }
+
+    const id = setInterval(() => savedCallback.current(), delay);
+
+    return () => clearInterval(id);
+  }, [delay]);
+}
+
+export default useInterval;
+
+
+
+================================================
+FILE: src/hooks/useNavObserver.tsx
+================================================
+import {useEffect} from 'react';
+
+import {headerID} from '../components/Sections/Header';
+import {SectionId} from '../data/data';
+
+export const useNavObserver = (selectors: string, handler: (section: SectionId | null) => void) => {
+  useEffect(() => {
+    // Get all sections
+    const headings = document.querySelectorAll(selectors);
+    const headingsArray = Array.from(headings);
+    const headerWrapper = document.getElementById(headerID);
+
+    // Create the IntersectionObserver API
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const currentY = entry.boundingClientRect.y;
+          const id = entry.target.getAttribute('id');
+          if (headerWrapper) {
+            // Create a decision object
+            const decision = {
+              id,
+              currentIndex: headingsArray.findIndex(heading => heading.getAttribute('id') === id),
+              isIntersecting: entry.isIntersecting,
+              currentRatio: entry.intersectionRatio,
+              aboveToc: currentY < headerWrapper.getBoundingClientRect().y,
+              belowToc: !(currentY < headerWrapper.getBoundingClientRect().y),
+            };
+            if (decision.isIntersecting) {
+              // Header at 30% from the top, update to current header
+              handler(decision.id as SectionId);
+            } else if (
+              !decision.isIntersecting &&
+              decision.currentRatio < 1 &&
+              decision.currentRatio > 0 &&
+              decision.belowToc
+            ) {
+              const currentVisible = headingsArray[decision.currentIndex - 1]?.getAttribute('id');
+              handler(currentVisible as SectionId);
+            }
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px 0px -70% 0px',
+      },
+    );
+    // Observe all the Sections
+    headings.forEach(section => {
+      observer.observe(section);
+    });
+    // Cleanup
+    return () => {
+      observer.disconnect();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Dependency here is the post content.
+};
+
+
+
+================================================
+FILE: src/hooks/useWindow.ts
+================================================
+import {useEffect, useState} from 'react';
+
+interface WindowSize {
+  width: number;
+  height: number;
+}
+
+const useWindow = (): WindowSize => {
+  const [windowSize, setWindowSize] = useState<WindowSize>({
+    width: 0,
+    height: 0,
+  });
+
+  const handleSize = () => {
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  };
+
+  // Set size at the first client-side load
+  useEffect(() => {
+    window.addEventListener('resize', handleSize);
+    handleSize();
+    return () => window.removeEventListener('resize', handleSize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return windowSize;
+};
+
+export default useWindow;
+
+
+
+================================================
+FILE: src/images/header-background.webp
+================================================
+[Binary file]
+
+
+================================================
+FILE: src/images/testimonial.webp
+================================================
+[Binary file]
+
+
+================================================
+FILE: src/images/.gitkeep
+================================================
+[Empty file]
+
+
+================================================
+FILE: src/pages/_app.tsx
+================================================
+import 'tailwindcss/tailwind.css';
+import '../globalStyles.scss';
+
+import type {AppProps} from 'next/app';
+import {memo} from 'react';
+
+const MyApp = memo(({Component, pageProps}: AppProps): JSX.Element => {
+  return (
+    <>
+      <Component {...pageProps} />
+    </>
+  );
+});
+
+export default MyApp;
+
+
+
+================================================
+FILE: src/pages/_document.tsx
+================================================
+import {Head, Html, Main, NextScript} from 'next/document';
+
+// next/document <Head /> vs next/head <Head />
+//
+// next/document Head is rendered once on the server. This is different from next/head which will
+// rebuild the next/head fields each time it's called, and won't overwrite next/document's Head.
+
+export default function Document() {
+  return (
+    <Html lang="en">
+      <Head>
+        <meta charSet="utf-8" />
+        {/* google translate breaks react:
+          - https://github.com/facebook/react/issues/11538
+          - https://bugs.chromium.org/p/chromium/issues/detail?id=872770 */}
+        <meta content="notranslate" name="google" />
+      </Head>
+      <body className="bg-black">
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+}
+
+
+
+================================================
+FILE: src/pages/index.tsx
+================================================
+import dynamic from 'next/dynamic';
+import {FC, memo} from 'react';
+
+import Page from '../components/Layout/Page';
+import About from '../components/Sections/About';
+import Contact from '../components/Sections/Contact';
+import Footer from '../components/Sections/Footer';
+import Hero from '../components/Sections/Hero';
+import Portfolio from '../components/Sections/Portfolio';
+import Resume from '../components/Sections/Resume';
+// import Testimonials from '../components/Sections/Testimonials';
+import {homePageMeta} from '../data/data';
+
+// eslint-disable-next-line react-memo/require-memo
+const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
+
+const Home: FC = memo(() => {
+  const {title, description} = homePageMeta;
+  return (
+    <Page description={description} title={title}>
+      <Header />
+      <Hero />
+      <About />
+      <Resume />
+      <Portfolio />
+      {/* <Testimonials /> */}
+      <Contact />
+      <Footer />
+    </Page>
+  );
+});
+
+export default Home;
+
+
+
+================================================
+FILE: src/pages/api/.gitkeep
+================================================
+[Empty file]
+
+
+================================================
+FILE: .github/workflows/gh-pages.yml
+================================================
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build static site
+        # env:
+        #   GITHUB_PAGES: "true"
+        run: yarn build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+

@@ -2,12 +2,12 @@ import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
   BuildingOffice2Icon,
-  CalendarIcon,
+  // CalendarIcon,
   FlagIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
-
+import TelegramIcon from '../components/Icon/TelegramIcon';
 import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import heroImage from '../images/header-background.webp';
@@ -30,8 +30,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'Alireza Rahimpanah - Frontend Developer',
-  description: "Frontend developer specialized in React, Next.js, Tailwind, and Bootstrap.",
+  title: 'Alireza Rahimpanah - Full-Stack Developer',
+  description: 'Full-stack developer building websites and custom web apps with Django, React, and Next.js.',
 };
 
 /**
@@ -61,10 +61,10 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        Frontend developer with 2+ years of experience in HTML, CSS, JavaScript, and TypeScript. Skilled in building responsive UIs with <strong className="text-stone-100">React</strong>, <strong className="text-stone-100">Next.js</strong>, <strong className="text-stone-100">Bootstrap</strong>, and <strong className="text-stone-100">Tailwind CSS</strong>.
+        Full-stack developer building custom web applications and business solutions using <strong className="text-stone-100">Django</strong>, <strong className="text-stone-100">React</strong>, and <strong className="text-stone-100">Next.js</strong>.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        Focused on clean code, efficient design, and delivering user-friendly web applications.
+        Available for remote freelance projects.
       </p>
     </>
   ),
@@ -88,14 +88,14 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Frontend developer skilled in React, Next.js, Tailwind, and Bootstrap. Over 2 years of experience building responsive and accessible web apps. Eager to learn and solve problems efficiently.`,
+  description: `I build websites, management panels, internal tools, and real-time web applications for small businesses and individuals. As a full-stack developer, I combine backend efficiency with responsive frontend design to deliver complete web products.`,
   aboutItems: [
-    {label: 'Location', text: 'mashhad, South Khorasan, Iran', Icon: MapIcon},
-    {label: 'Age', text: '20', Icon: CalendarIcon},
+    {label: 'Location', text: 'Mashhad, Iran', Icon: MapIcon},
+    {label: 'Status', text: 'Available for Freelance', Icon: SparklesIcon},
     {label: 'Nationality', text: 'Iranian', Icon: FlagIcon},
-    {label: 'Interests', text: 'Frontend Development, UI/UX, Learning New Tech', Icon: SparklesIcon},
+    {label: 'Interests', text: 'Full-Stack Web Apps, Real-time Systems, UI/UX', Icon: SparklesIcon},
     {label: 'Study', text: 'BSc Computer Engineering, University of Birjand', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Frontend Developer Intern at Jahad-e Daneshgahi', Icon: BuildingOffice2Icon},
+    {label: 'Experience', text: '2+ Years in Web Development', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -104,11 +104,12 @@ export const aboutData: About = {
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Programming Languages',
+    name: 'Backend & Database',
     skills: [
-      {name: 'JavaScript', level: 8},
-      {name: 'TypeScript', level: 7},
-      {name: 'Python', level: 5},
+      {name: 'Python', level: 8},
+      {name: 'Django', level: 8},
+      {name: 'PostgreSQL', level: 7},
+      {name: 'WebSockets', level: 7},
     ],
   },
   {
@@ -116,16 +117,16 @@ export const skills: SkillGroup[] = [
     skills: [
       {name: 'React', level: 8},
       {name: 'Next.js', level: 7},
-      {name: 'Bootstrap', level: 8},
-      {name: 'Tailwind CSS', level: 7},
+      {name: 'TypeScript', level: 7},
+      {name: 'JavaScript', level: 8},
     ],
   },
   {
-    name: 'Tools & Others',
+    name: 'Tools & DevOps',
     skills: [
-      {name: 'Git', level: 7},
-      {name: 'REST APIs', level: 7},
-      {name: 'Jira', level: 5},
+      {name: 'Docker', level: 6},
+      {name: 'Git', level: 8},
+      {name: 'REST APIs', level: 8},
     ],
   },
 ];
@@ -135,71 +136,35 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'game hub',
-    description: 'a store to sell games using react',
-    url: 'https://github.com/say-alireza/gamehub-react', // لینک GitHub پروژه
+    title: 'LAN Chat Application',
+    description: 'Open-source real-time local chat app built with Next.js, Django, and WebSockets.',
+    url: 'https://github.com/say-alireza/local-chat-app',
+    image: require('../images/portfolio/localchat.jpg'),
+  },
+  // {
+  //   title: 'Risk Management System',
+  //   description: 'Custom web app for analyzing and managing industrial pipeline data.',
+  //   url: 'https://github.com/say-alireza',
+  //   image: require('../images/portfolio/portfolio-3.jpg'),
+  // },
+  {
+    title: 'Wee Restaurant',
+    description: 'Custom restaurant website built for a client.',
+    url: 'https://github.com/say-alireza/Wee',
+    image: require('../images/portfolio/wee.jpg'),
+  },
+  {
+    title: 'Game Hub',
+    description: 'Game store platform built using React and modern frontend tools.',
+    url: 'https://github.com/say-alireza/gamehub-react',
     image: require('../images/portfolio/portfolio-1.jpg'),
   },
   {
-    title: 'shopping pannel', 
-    description: 'a shopping panel built with React and Bootstrap',
-    url: 'https://github.com/say-alireza/bootstrap-project-shopping-pannel', // لینک GitHub پروژه
-    image: require('../images/portfolio/portfolio-2.jpg'),
-  },
-  {
-    title: 'trading bot panel',
-    description: 'a trading bot panel built with bootstrap and Django',
-    url: 'https://github.com/say-alireza/trade-bot-pannel-front-end', // لینک GitHub پروژه
+    title: 'Trading Bot Panel',
+    description: 'Management panel built with Django, Bootstrap, and REST integration.',
+    url: 'https://github.com/say-alireza/trade-bot-pannel-front-end',
     image: require('../images/portfolio/portfolio-3.jpg'),
   },
-  // {
-  //   title: 'Project title 4',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: require('../images/portfolio/portfolio-4.jpg'),
-  // },
-  // {
-  //   title: 'Project title 5',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: require('../images/portfolio/portfolio-5.jpg'),
-  // },
-  // {
-  //   title: 'Project title 6',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: require('../images/portfolio/portfolio-6.jpg'),
-  // },
-  // {
-  //   title: 'Project title 7',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: require('../images/portfolio/portfolio-7.jpg'),
-  // },
-  // {
-  //   title: 'Project title 8',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: require('../images/portfolio/portfolio-8.jpg'),
-  // },
-  // {
-  //   title: 'Project title 9',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: require('../images/portfolio/portfolio-9.jpg'),
-  // },
-  // {
-  //   title: 'Project title 10',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: require('../images/portfolio/portfolio-10.jpg'),
-  // },
-  // {
-  //   title: 'Project title 11',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: require('../images/portfolio/portfolio-11.jpg'),
-  // },
 ];
 
 /**
@@ -210,7 +175,7 @@ export const education: TimelineItem[] = [
     date: '2023 - Present',
     location: 'University of Birjand',
     title: 'BSc in Computer Engineering',
-    content: <p>Currently studying computer engineering with a focus on software development and frontend technologies.</p>,
+    content: <p>Studying computer engineering with a primary focus on full-stack web application architecture and software engineering.</p>,
   },
 ];
 
@@ -219,22 +184,22 @@ export const education: TimelineItem[] = [
  */
 export const experience: TimelineItem[] = [
   {
+    date: 'Present',
+    location: 'Remote',
+    title: 'Freelance Full-Stack Developer',
+    content: (
+      <p>
+        Building custom web platforms, business dashboards, internal management tools, and API integrations for clients using Django, React, and Next.js.
+      </p>
+    ),
+  },
+  {
     date: 'Dec 2023 - Aug 2024',
     location: 'Jahad-e Daneshgahi, Birjand',
     title: 'Frontend Developer Intern',
     content: (
       <p>
-        Developed product pages using Bootstrap and JavaScript, resolved responsive layout issues, built React interfaces consuming REST APIs, learned Git and Jira, and contributed to team projects.
-      </p>
-    ),
-  },
-  {
-    date: 'Sep 2024 - Jan 2025',
-    location: 'Iran',
-    title: 'Team Project: Trade Bot Panel',
-    content: (
-      <p>
-        Collaborated with backend developers to implement Django functionality, including form handling, routing, and API endpoints, while contributing frontend interface improvements and documentation.
+        Developed responsive user interfaces, integrated REST APIs, and worked closely with development teams using Git and agile tools.
       </p>
     ),
   },
@@ -247,8 +212,8 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
-      name: 'John Doe',
-      text: 'Alireza is a dedicated developer who delivers quality work on time.',
+      name: 'Client Feedback',
+      text: 'Alireza delivers reliable, high-quality web solutions and communicates efficiently throughout the development process.',
       image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
     },
   ],
@@ -259,7 +224,7 @@ export const testimonial: TestimonialSection = {
  */
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Feel free to reach out for collaborations or job opportunities.',
+  description: 'Available for freelance projects, custom web app development, or technical inquiries.',
   items: [
     {
       type: ContactType.Email,
@@ -268,8 +233,8 @@ export const contact: ContactSection = {
     },
     {
       type: ContactType.Location,
-      text: 'Birjand, South Khorasan, Iran',
-      href: 'https://www.google.com/maps/place/Birjand',
+      text: 'Mashhad, Iran',
+      href: 'https://www.google.com/maps/place/Mashhad',
     },
   ],
 };
@@ -287,5 +252,10 @@ export const socialLinks: Social[] = [
     label: 'LinkedIn',
     Icon: LinkedInIcon,
     href: 'https://linkedin.com/in/alireza-rahimpanah-b7010a301',
+  },
+  {
+    label: 'Telegram',
+    Icon: TelegramIcon,
+    href: 'https://t.me/say_alirexa', 
   },
 ];
