@@ -1,15 +1,14 @@
 /* eslint-env node */
 
 // https://github.com/vercel/next.js/blob/master/packages/next/next-server/server/config.ts
-const isGithubPages = process.env.GITHUB_PAGES === 'true';
-const basePath = isGithubPages ? '/nextjs-resume' : '';
+const basePath = '';
 
 const nextConfig = {
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },
-  assetPrefix: basePath || undefined,
-  basePath,
+  assetPrefix: undefined,
+  basePath: '',
   webpack: config => {
     const oneOfRule = config.module.rules.find(rule => rule.oneOf);
 
