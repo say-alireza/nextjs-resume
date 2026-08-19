@@ -31,8 +31,8 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build static site
-        env:
-          GITHUB_PAGES: "true"
+        # env:
+        #   GITHUB_PAGES: "true"
         run: yarn build
 
       - name: Upload artifact
