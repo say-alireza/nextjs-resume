@@ -71,7 +71,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: `${basePath}/Alireza-Rahimpanah-main.pdf`,
+      href: `${basePath}/AlirezaRahimpanah-main.pdf`,
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
