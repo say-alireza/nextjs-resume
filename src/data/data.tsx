@@ -1,15 +1,16 @@
+/* eslint-disable simple-import-sort/imports */
 import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
   BuildingOffice2Icon,
-  // CalendarIcon,
   FlagIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
-import TelegramIcon from '../components/Icon/TelegramIcon';
+
 import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
+import TelegramIcon from '../components/Icon/TelegramIcon';
 import heroImage from '../images/header-background.webp';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
@@ -141,12 +142,6 @@ export const portfolioItems: PortfolioItem[] = [
     url: 'https://github.com/say-alireza/local-chat-app',
     image: require('../images/portfolio/localchat.jpg'),
   },
-  // {
-  //   title: 'Risk Management System',
-  //   description: 'Custom web app for analyzing and managing industrial pipeline data.',
-  //   url: 'https://github.com/say-alireza',
-  //   image: require('../images/portfolio/portfolio-3.jpg'),
-  // },
   {
     title: 'Wee Restaurant',
     description: 'Custom restaurant website built for a client.',
