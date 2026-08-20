@@ -61,11 +61,11 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        Full-stack developer building custom web applications and business solutions using <strong className="text-stone-100">Django</strong>, <strong className="text-stone-100">React</strong>, and <strong className="text-stone-100">Next.js</strong>.
+        Full-stack developer building custom web applications and business solutions using{' '}
+        <strong className="text-stone-100">Django</strong>, <strong className="text-stone-100">React</strong>, and{' '}
+        <strong className="text-stone-100">Next.js</strong>.
       </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        Available for remote freelance projects.
-      </p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">Available for remote freelance projects.</p>
     </>
   ),
   actions: [
@@ -175,7 +175,12 @@ export const education: TimelineItem[] = [
     date: '2023 - Present',
     location: 'University of Birjand',
     title: 'BSc in Computer Engineering',
-    content: <p>Studying computer engineering with a primary focus on full-stack web application architecture and software engineering.</p>,
+    content: (
+      <p>
+        Studying computer engineering with a primary focus on full-stack web application architecture and software
+        engineering.
+      </p>
+    ),
   },
 ];
 
@@ -189,7 +194,8 @@ export const experience: TimelineItem[] = [
     title: 'Freelance Full-Stack Developer',
     content: (
       <p>
-        Building custom web platforms, business dashboards, internal management tools, and API integrations for clients using Django, React, and Next.js.
+        Building custom web platforms, business dashboards, internal management tools, and API integrations for clients
+        using Django, React, and Next.js.
       </p>
     ),
   },
@@ -199,7 +205,8 @@ export const experience: TimelineItem[] = [
     title: 'Frontend Developer Intern',
     content: (
       <p>
-        Developed responsive user interfaces, integrated REST APIs, and worked closely with development teams using Git and agile tools.
+        Developed responsive user interfaces, integrated REST APIs, and worked closely with development teams using Git
+        and agile tools.
       </p>
     ),
   },
@@ -256,6 +263,6 @@ export const socialLinks: Social[] = [
   {
     label: 'Telegram',
     Icon: TelegramIcon,
-    href: 'https://t.me/say_alirexa', 
+    href: 'https://t.me/say_alirexa',
   },
 ];
