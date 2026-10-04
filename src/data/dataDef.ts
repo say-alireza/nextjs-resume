@@ -120,6 +120,7 @@ export const ContactType = {
   Email: 'Email',
   Phone: 'Phone',
   Location: 'Location',
+  Telegram: 'Telegram',
   Github: 'Github',
   LinkedIn: 'LinkedIn',
   Facebook: 'Facebook',

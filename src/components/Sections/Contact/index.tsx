@@ -9,6 +9,7 @@ import FacebookIcon from '../../Icon/FacebookIcon';
 import GithubIcon from '../../Icon/GithubIcon';
 import InstagramIcon from '../../Icon/InstagramIcon';
 import LinkedInIcon from '../../Icon/LinkedInIcon';
+import TelegramIcon from '../../Icon/TelegramIcon';
 import TwitterIcon from '../../Icon/TwitterIcon';
 import Section from '../../Layout/Section';
 import ContactForm from './ContactForm';
@@ -17,6 +18,7 @@ const ContactValueMap: Record<ContactType, ContactValue> = {
   [ContactType.Email]: {Icon: EnvelopeIcon, srLabel: 'Email'},
   [ContactType.Phone]: {Icon: DevicePhoneMobileIcon, srLabel: 'Phone'},
   [ContactType.Location]: {Icon: MapPinIcon, srLabel: 'Location'},
+  [ContactType.Telegram]: {Icon: TelegramIcon, srLabel: 'Telegram'},
   [ContactType.Github]: {Icon: GithubIcon, srLabel: 'Github'},
   [ContactType.LinkedIn]: {Icon: LinkedInIcon, srLabel: 'LinkedIn'},
   [ContactType.Facebook]: {Icon: FacebookIcon, srLabel: 'Facebook'},

@@ -241,8 +241,14 @@ export const testimonial: TestimonialSection = {
  */
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Available for freelance projects, custom web app development, or technical inquiries.',
+  description:
+    'Available for freelance projects and web development. Both email and Telegram are open, though I respond fastest on Telegram.',
   items: [
+    {
+      type: ContactType.Telegram,
+      text: '@say_alireza (fastest response)',
+      href: 'https://t.me/say_alireza',
+    },
     {
       type: ContactType.Email,
       text: 'a.rahimpanah71@gmail.com',

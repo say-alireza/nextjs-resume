@@ -190,8 +190,14 @@ export const experienceFa: TimelineItem[] = [
 
 export const contactFa: ContactSection = {
   headerText: 'راه‌های ارتباطی',
-  description: 'برای همکاری در پروژه‌های فریلنسری، توسعه وب‌اپلیکیشن‌های اختصاصی یا گفت‌وگو درباره ایده‌ها پیام دهید.',
+  description:
+    'برای هماهنگی پروژه‌های فریلنسری یا گفت‌وگو، ایمیل و تلگرام در دسترسه اما به پیام‌های تلگرام سریع‌تر پاسخ می‌دم.',
   items: [
+    {
+      type: ContactType.Telegram,
+      text: '@say_alireza (پاسخ‌گویی سریع‌تر)',
+      href: 'https://t.me/say_alireza',
+    },
     {
       type: ContactType.Email,
       text: 'a.rahimpanah71@gmail.com',
