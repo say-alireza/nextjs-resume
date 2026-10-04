@@ -1,8 +1,6 @@
 import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
-  BuildingOffice2Icon,
-  FlagIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
@@ -72,14 +70,12 @@ export const heroDataFa: Hero = {
 export const aboutDataFa: About = {
   profileImageSrc: aboutData.profileImageSrc,
   description:
-    'علاقه‌مند به خلق رابط‌های کاربری چشم‌نواز، واکنش‌گرا و سریع. با ترکیب تفکر مهندسی، معماری تمیز و درک عمیق از تجربه کاربری (UI/UX)، سیستم‌های تحت وب، پنل‌های مدیریتی و پلتفرم‌های تعاملی را از ایده تا استقرار کامل پیاده‌سازی می‌کنم.',
+    'توسعه‌دهنده فرانت‌اند ساکن مشهد. بیشتر وقتم با کد زدن می‌گذره، اما توی اوقات فراغت بوکس و بدنسازی، فیلم و سریال و موزیک روتین ثابتمه و توی وقت آزادم هم طراحی سایت و پروژه‌های وب انجام می‌دم.',
   aboutItems: [
     {label: 'موقعیت', text: 'مشهد، ایران', Icon: MapIcon},
-    {label: 'وضعیت کاری', text: 'آماده پذیرش پروژه', Icon: SparklesIcon},
-    {label: 'ملیت', text: 'ایرانی', Icon: FlagIcon},
-    {label: 'حوزه‌های تمرکز', text: 'Front-End, Full-Stack, UI/UX', Icon: SparklesIcon},
-    {label: 'تحصیلات', text: 'کارشناسی مهندسی کامپیوتر — دانشگاه بیرجند', Icon: AcademicCapIcon},
-    {label: 'سابقه فعالیت', text: '+۲ سال توسعه تخصصی وب', Icon: BuildingOffice2Icon},
+    {label: 'فعالیت', text: 'توسعه فرانت‌اند و طراحی وب', Icon: SparklesIcon},
+    {label: 'تحصیلات', text: 'مهندسی کامپیوتر — دانشگاه بیرجند', Icon: AcademicCapIcon},
+    {label: 'علاقه‌مندی‌ها', text: 'بوکس • بدنسازی • فیلم و سریال • موزیک', Icon: SparklesIcon},
   ],
 };
 
@@ -115,43 +111,43 @@ export const skillsFa: SkillGroup[] = [
 export const portfolioItemsFa: PortfolioItem[] = [
   {
     title: 'باشگاه انگلیسی EPD',
-    description: 'سامانه رسمی باشگاه گفت‌وگوی انگلیسی EPD شامل سیستم رزرواسیون صندلی، بات تلگرام و درگاه پرداخت شاپرک.',
+    description: 'پلتفرم اختصاصی باشگاه گفت‌وگوی انگلیسی EPD با رزرواسیون صندلی و درگاه پرداخت.',
     url: 'https://epdcommunity.ir/',
     image: require('../images/portfolio/epd.jpg'),
   },
   {
     title: 'فروشگاه فایل آروین‌گران',
-    description: 'پلتفرم فروشگاهی و مارکت‌پلیس دانلود آنلاین فایل‌ها، نرم‌افزارهای تخصصی و جزوات مهندسی.',
+    description: 'پلتفرم فروشگاهی و مارکت‌پلیس دانلود آنلاین فایل‌ها، دوره‌ها و جزوات تخصصی.',
     url: 'http://files.arvingaran.com/',
     image: require('../images/portfolio/arvingaran.jpg'),
   },
   {
     title: 'پیام‌رسان شبکه محلی (LAN Chat)',
-    description: 'اپلیکیشن متن‌باز چت بلادرنگ در بستر شبکه محلی پیاده‌سازی شده با Next.js، Django و WebSockets.',
+    description: 'اپلیکیشن متن‌باز چت بلادرنگ شبکه محلی با Next.js، Django و WebSockets.',
     url: 'https://github.com/say-alireza/local-chat-app',
     image: require('../images/portfolio/localchat.jpg'),
   },
   {
     title: 'وب‌سایت رستوران Wee',
-    description: 'طراحی و توسعه اختصاصی وب‌سایت معرفی و منوی رستوران با طراحی ریسپانسیو و مدرن.',
+    description: 'طراحی اختصاصی وب‌سایت معرفی و منوی آنلاین رستوران.',
     url: 'https://say-alireza.github.io/Wee/',
     image: require('../images/portfolio/wee.jpg'),
   },
   {
     title: 'ربات تلگرام گیف فارسی (@persiangifs_bot)',
-    description: 'ربات تلگرامی جستجوی درون‌برنامه‌ای (اینلاین) گیف‌های متحرک با دسته‌بندی و عبارات فارسی.',
+    description: 'ربات تلگرامی جستجوی اینلاین گیف با دسته‌بندی و عبارات فارسی.',
     url: 'https://t.me/persiangifs_bot',
     image: require('../images/portfolio/persiangifs.jpg'),
   },
   {
     title: 'پنل مدیریت ربات ترید',
-    description: 'داشبورد اختصاصی مدیریت و پایش استراتژی‌های معاملاتی با Django، Bootstrap و REST APIs.',
+    description: 'داشبورد مدیریت و پایش استراتژی‌های معاملاتی با Django و Bootstrap.',
     url: 'https://github.com/say-alireza/trade-bot-pannel-front-end',
     image: require('../images/portfolio/portfolio-3.jpg'),
   },
   {
     title: 'پلتفرم Game Hub',
-    description: 'فروشگاه و آرشیو بازی‌های ویدیویی پیاده‌سازی شده با React و مدرن‌ترین کتابخانه‌های فرانت‌اند.',
+    description: 'آرشیو و فروشگاه بازی‌های ویدیویی پیاده‌سازی شده با React.',
     url: 'https://github.com/say-alireza/gamehub-react',
     image: require('../images/portfolio/portfolio-1.jpg'),
   },
@@ -164,7 +160,7 @@ export const educationFa: TimelineItem[] = [
     title: 'کارشناسی مهندسی کامپیوتر',
     content: (
       <p>
-        تحصیل در رشته مهندسی کامپیوتر با تمرکز بر مهندسی نرم‌افزار، معماری وب‌اپلیکیشن‌های مدرن و طراحی سیستم‌های مقیاس‌پذیر.
+        تحصیل‌کرده
       </p>
     ),
   },

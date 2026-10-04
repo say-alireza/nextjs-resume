@@ -67,19 +67,19 @@ const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, descrip
     <a
       className={classNames(
         'absolute inset-0 h-full w-full bg-gray-900 transition-all duration-300',
-        {'opacity-0 hover:opacity-90': !mobile},
-        showOverlay ? 'opacity-90' : 'opacity-0',
+        {'opacity-0 hover:opacity-95': !mobile},
+        showOverlay ? 'opacity-95' : 'opacity-0',
       )}
       href={url}
       onClick={handleItemClick}
       ref={linkRef}
       target="_blank">
-      <div className="relative h-full w-full p-4">
-        <div className="flex h-full w-full flex-col gap-y-2 overflow-y-auto overscroll-contain">
-          <h2 className="text-center font-bold text-white opacity-100">{title}</h2>
-          <p className="text-xs text-white opacity-100 sm:text-sm leading-relaxed">{description}</p>
+      <div className="relative flex h-full w-full flex-col items-center justify-center p-4 text-center">
+        <div className="flex w-full flex-col items-center justify-center gap-y-2 overflow-hidden">
+          <h2 className="text-center font-bold text-white opacity-100 text-sm sm:text-base leading-snug">{title}</h2>
+          <p className="line-clamp-4 text-xs text-neutral-200 opacity-100 sm:text-sm leading-relaxed max-w-xs">{description}</p>
         </div>
-        <ArrowTopRightOnSquareIcon className="absolute bottom-1 right-1 h-4 w-4 shrink-0 text-white sm:bottom-2 sm:right-2 rtl:right-auto rtl:left-2" />
+        <ArrowTopRightOnSquareIcon className="absolute bottom-2 right-2 h-4 w-4 shrink-0 text-white/80 sm:bottom-2.5 sm:right-2.5 rtl:right-auto rtl:left-2 sm:rtl:left-2.5" />
       </div>
     </a>
   );

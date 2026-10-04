@@ -14,6 +14,18 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'IranNastaliq';
+  src: url('/fonts/IranNastaliq.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-nastaliq {
+  font-family: 'IranNastaliq', 'Vazirmatn', cursive !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
