@@ -60,15 +60,15 @@ export const heroData: Hero = {
   imageSrc: heroImage,
   name: `Alireza Rahimpanah`,
   description: (
-    <div className="flex flex-col gap-y-2 text-center max-w-xl">
-      <p className="text-base text-gray-100 sm:text-lg leading-relaxed font-medium">
-        Hi, I'm Alireza; a frontend developer based in Mashhad.
+    <div className="flex flex-col gap-y-3 sm:gap-y-3.5 text-center max-w-xl">
+      <p className="text-base text-gray-100 sm:text-lg leading-relaxed font-semibold">
+        Hi, I'm Alireza; a Full-Stack Developer based in Mashhad.
       </p>
       <p className="text-sm text-gray-300 sm:text-base leading-relaxed">
-        Focused on modern web, JavaScript ecosystem, and building clean interfaces — from admin dashboards to open-source projects and Telegram bots.
+        Focused on end-to-end web development — building robust backends with Python & Django alongside modern, responsive interfaces with React & Next.js; from web applications and dashboards to practical Telegram bots.
       </p>
-      <p className="text-xs text-orange-400 sm:text-sm font-medium pt-1">
-        Outside of code: Boxing • Fitness • Cinema • Music
+      <p className="text-xs sm:text-sm text-neutral-400 font-medium pt-1">
+        Outside of code: <span className="text-orange-400">Boxing • Fitness • Cinema • Music</span>
       </p>
     </div>
   ),

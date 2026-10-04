@@ -23,35 +23,42 @@ const Hero: FC = memo(() => {
           priority
           src={imageSrc}
         />
-        <div className="z-10 max-w-screen-md px-4">
-          <div className="flex flex-col items-center gap-y-5 rounded-2xl bg-gray-900/60 p-6 sm:p-8 text-center shadow-2xl backdrop-blur-md border border-neutral-700/40">
-            {/* Profile Avatar */}
-            <div className="relative h-28 w-28 sm:h-36 sm:w-36 overflow-hidden rounded-full border-4 border-orange-500 shadow-xl ring-4 ring-orange-500/20 shrink-0">
+        <div className="z-10 max-w-screen-md px-4 sm:px-6">
+          <div className="flex flex-col items-center gap-y-7 sm:gap-y-9 rounded-3xl bg-gray-900/70 p-8 sm:p-12 text-center shadow-2xl backdrop-blur-md border border-neutral-700/50">
+            {/* Profile Avatar - clean minimalist border */}
+            <div className="relative h-28 w-28 sm:h-36 sm:w-36 overflow-hidden rounded-full border-2 border-white/20 shadow-2xl ring-1 ring-white/10 shrink-0">
               <Image alt={name} className="h-full w-full object-cover" placeholder="blur" priority src={profilepic} />
             </div>
 
-            <h1
-              className={classNames(
-                'font-bold text-white',
-                language === 'fa' ? 'font-nastaliq text-5xl sm:text-7xl lg:text-8xl py-1 tracking-normal' : 'text-3xl sm:text-5xl lg:text-6xl',
-              )}>
-              {name}
-            </h1>
-            {description}
-            <div className="flex gap-x-4 text-neutral-100 pt-1">
+            <div className="flex flex-col items-center">
+              <h1
+                className={classNames(
+                  'font-bold text-white',
+                  language === 'fa' ? 'font-nastaliq text-5xl sm:text-7xl lg:text-8xl py-2 tracking-normal' : 'text-3xl sm:text-5xl lg:text-6xl tracking-tight',
+                )}>
+                {name}
+              </h1>
+            </div>
+
+            <div className="w-full flex justify-center">
+              {description}
+            </div>
+
+            <div className="flex gap-x-6 text-neutral-200 pt-1 sm:pt-2">
               <Socials />
             </div>
-            <div className="flex w-full justify-center gap-x-4 pt-2">
+
+            <div className="flex w-full justify-center gap-x-5 pt-2 sm:pt-3">
               {actions.map(({href, text, primary, Icon}) => (
                 <a
                   className={classNames(
-                    'flex items-center gap-x-2 rounded-full border-2 bg-none px-5 py-2.5 text-sm font-medium text-white ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base transition-colors',
-                    primary ? 'border-orange-500 ring-orange-500' : 'border-white ring-white',
+                    'flex items-center gap-x-2.5 rounded-full border-2 bg-none px-6 py-2.5 sm:px-7 sm:py-3 text-sm font-medium text-white ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base transition-all hover:scale-105',
+                    primary ? 'border-orange-500 ring-orange-500 text-orange-400 hover:text-white' : 'border-neutral-400 ring-neutral-400',
                   )}
                   href={href}
                   key={text}>
                   <span>{text}</span>
-                  {Icon && <Icon className="h-5 w-5 text-white sm:h-6 sm:w-6" />}
+                  {Icon && <Icon className="h-5 w-5 sm:h-6 sm:w-6" />}
                 </a>
               ))}
             </div>

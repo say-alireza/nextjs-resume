@@ -43,15 +43,15 @@ export const heroDataFa: Hero = {
   imageSrc: heroData.imageSrc,
   name: 'علیرضا رحیم‌پناه',
   description: (
-    <div className="flex flex-col gap-y-2 text-center max-w-xl">
-      <p className="text-base text-gray-100 sm:text-lg leading-relaxed font-medium">
-        سلام، علیرضام؛ توسعه‌دهنده فرانت‌اند ساکن مشهد.
+    <div className="flex flex-col gap-y-3 sm:gap-y-3.5 text-center max-w-xl">
+      <p className="text-base text-gray-100 sm:text-lg leading-relaxed font-semibold">
+        سلام، علیرضام؛ توسعه‌دهنده فول‌استک ساکن مشهد.
       </p>
       <p className="text-sm text-gray-300 sm:text-base leading-relaxed">
-        تمرکزم روی وب مدرن، اکوسیستم جاوااسکریپت و ساخت رابط‌های کاربری تمیزه؛ از پنل‌های مدیریتی تا پروژه‌های متن‌باز و بات‌های کاربردی تلگرام.
+        تمرکزم روی توسعه وب فول‌استک، پیاده‌سازی بک‌اند با Python و Django، و طراحی رابط‌های کاربری مدرن با React و Next.js هستش؛ از وب‌اپلیکیشن‌ها و پنل‌های مدیریتی تا ربات‌های کاربردی تلگرام.
       </p>
-      <p className="text-xs text-orange-400 sm:text-sm font-medium pt-1">
-        روتین خارج از کد: بوکس • بدنسازی • فیلم و سریال • موزیک
+      <p className="text-xs sm:text-sm text-neutral-400 font-medium pt-1">
+        روتین خارج از کد: <span className="text-orange-400">بوکس • بدنسازی • فیلم و سریال • موزیک</span>
       </p>
     </div>
   ),
@@ -73,10 +73,10 @@ export const heroDataFa: Hero = {
 export const aboutDataFa: About = {
   profileImageSrc: aboutData.profileImageSrc,
   description:
-    'توسعه‌دهنده فرانت‌اند ساکن مشهد. بیشتر وقتم با کد زدن می‌گذره، اما توی اوقات فراغت بوکس و بدنسازی، فیلم و سریال و موزیک روتین ثابتمه و توی وقت آزادم هم طراحی سایت و پروژه‌های وب انجام می‌دم.',
+    'توسعه‌دهنده فول‌استک ساکن مشهد. بیشتر وقتم با کد زدن می‌گذره، اما توی اوقات فراغت بوکس و بدنسازی، فیلم و سریال و موزیک روتین ثابتمه و توی وقت آزادم هم طراحی سایت و پروژه‌های وب انجام می‌دم.',
   aboutItems: [
     {label: 'موقعیت', text: 'مشهد، ایران', Icon: MapIcon},
-    {label: 'فعالیت', text: 'توسعه فرانت‌اند و طراحی وب', Icon: SparklesIcon},
+    {label: 'فعالیت', text: 'توسعه وب فول‌استک', Icon: SparklesIcon},
     {label: 'تحصیلات', text: 'مهندسی کامپیوتر — دانشگاه بیرجند', Icon: AcademicCapIcon},
     {label: 'علاقه‌مندی‌ها', text: 'بوکس • بدنسازی • فیلم و سریال • موزیک', Icon: SparklesIcon},
   ],
