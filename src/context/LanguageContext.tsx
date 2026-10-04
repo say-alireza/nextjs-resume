@@ -43,14 +43,17 @@ export const heroDataFa: Hero = {
   imageSrc: heroData.imageSrc,
   name: 'علیرضا رحیم‌پناه',
   description: (
-    <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg leading-relaxed">
-        توسعه‌دهنده فرانت‌اند و فول‌استک؛ طراح و مجری وب‌اپلیکیشن‌های مدرن و مقیاس‌پذیر با تمرکز ویژه بر{' '}
-        <strong className="text-stone-100">React</strong>، <strong className="text-stone-100">Next.js</strong> و{' '}
-        <strong className="text-stone-100">TypeScript</strong>.
+    <div className="flex flex-col gap-y-2 text-center max-w-xl">
+      <p className="text-base text-gray-100 sm:text-lg leading-relaxed font-medium">
+        سلام، علیرضام؛ توسعه‌دهنده فرانت‌اند ساکن مشهد.
       </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">آماده همکاری در پروژه‌های فریلنسری و ریموت.</p>
-    </>
+      <p className="text-sm text-gray-300 sm:text-base leading-relaxed">
+        تمرکزم روی وب مدرن، اکوسیستم جاوااسکریپت و ساخت رابط‌های کاربری تمیزه؛ از پنل‌های مدیریتی تا پروژه‌های متن‌باز و بات‌های کاربردی تلگرام.
+      </p>
+      <p className="text-xs text-orange-400 sm:text-sm font-medium pt-1">
+        روتین خارج از کد: بوکس • بدنسازی • فیلم و سریال • موزیک
+      </p>
+    </div>
   ),
   actions: [
     {
@@ -158,11 +161,7 @@ export const educationFa: TimelineItem[] = [
     date: '۱۴۰۲ — اکنون',
     location: 'دانشگاه بیرجند',
     title: 'کارشناسی مهندسی کامپیوتر',
-    content: (
-      <p>
-        تحصیل‌کرده
-      </p>
-    ),
+    content: null,
   },
 ];
 
@@ -183,7 +182,7 @@ export const experienceFa: TimelineItem[] = [
     title: 'کارآموز توسعه فرانت‌اند',
     content: (
       <p>
-        توسعه رابط‌های کاربری واکنش‌گرا، اتصال به REST APIها و مشارکت فعال در تیم‌های نرم‌افزاری بر بستر گیت و متدولوژی چابک.
+        توسعه رابط‌های کاربری با جاوااسکریپت و Bootstrap زیر نظر مهندس مهاجر (مسئول IT جهاد دانشگاهی).
       </p>
     ),
   },

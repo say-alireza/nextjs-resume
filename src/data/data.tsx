@@ -58,16 +58,19 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Alireza Rahimpanah.`,
+  name: `Alireza Rahimpanah`,
   description: (
-    <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        Full-stack developer building custom web applications and business solutions using{' '}
-        <strong className="text-stone-100">Django</strong>, <strong className="text-stone-100">React</strong>, and{' '}
-        <strong className="text-stone-100">Next.js</strong>.
+    <div className="flex flex-col gap-y-2 text-center max-w-xl">
+      <p className="text-base text-gray-100 sm:text-lg leading-relaxed font-medium">
+        Hi, I'm Alireza; a frontend developer based in Mashhad.
       </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">Available for remote freelance projects.</p>
-    </>
+      <p className="text-sm text-gray-300 sm:text-base leading-relaxed">
+        Focused on modern web, JavaScript ecosystem, and building clean interfaces — from admin dashboards to open-source projects and Telegram bots.
+      </p>
+      <p className="text-xs text-orange-400 sm:text-sm font-medium pt-1">
+        Outside of code: Boxing • Fitness • Cinema • Music
+      </p>
+    </div>
   ),
   actions: [
     {
@@ -188,12 +191,7 @@ export const education: TimelineItem[] = [
     date: '2023 - Present',
     location: 'University of Birjand',
     title: 'BSc in Computer Engineering',
-    content: (
-      <p>
-        Studying computer engineering with a primary focus on full-stack web application architecture and software
-        engineering.
-      </p>
-    ),
+    content: null,
   },
 ];
 
@@ -218,8 +216,7 @@ export const experience: TimelineItem[] = [
     title: 'Frontend Developer Intern',
     content: (
       <p>
-        Developed responsive user interfaces, integrated REST APIs, and worked closely with development teams using Git
-        and agile tools.
+        Built frontend user interfaces using JavaScript and Bootstrap under the supervision of Eng. Mohajer (Head of IT).
       </p>
     ),
   },
