@@ -35,23 +35,23 @@ export type Language = 'en' | 'fa';
 // --- Persian Translated Datasets (conforming to persian-typography & ZWNJ standard) ---
 
 export const homePageMetaFa: HomepageMeta = {
-  title: 'علیرضا رحیم‌پناه — توسعه‌دهنده وب و فرانت‌اند',
-  description: 'رزومه و نمونه‌کارهای علیرضا رحیم‌پناه، توسعه‌دهنده فرانت‌اند و فول‌استک مسلط به React، Next.js، TypeScript و Django.',
+  title: 'علی رضا رحیم پناه — توسعه‌دهنده فول‌استک',
+  description: 'رزومه و نمونه‌کارهای علی رضا رحیم پناه، توسعه‌دهنده فول‌استک مسلط به Django، React، Next.js و TypeScript.',
 };
 
 export const heroDataFa: Hero = {
   imageSrc: heroData.imageSrc,
-  name: 'علیرضا رحیم‌پناه',
+  name: 'علی رضا رحیم  پناه',
   description: (
     <div className="flex flex-col gap-y-3 sm:gap-y-3.5 text-center max-w-xl">
       <p className="text-base text-gray-100 sm:text-lg leading-relaxed font-semibold">
-        سلام، علیرضام؛ توسعه‌دهنده فول‌استک ساکن مشهد.
+        سلام، علی رضام؛ توسعه‌دهنده فول‌استک ساکن مشهد.
       </p>
       <p className="text-sm text-gray-300 sm:text-base leading-relaxed">
         تمرکزم روی توسعه وب فول‌استک، پیاده‌سازی بک‌اند با Python و Django، و طراحی رابط‌های کاربری مدرن با React و Next.js هستش؛ از وب‌اپلیکیشن‌ها و پنل‌های مدیریتی تا ربات‌های کاربردی تلگرام.
       </p>
-      <p className="text-xs sm:text-sm text-neutral-400 font-medium pt-1">
-        روتین خارج از کد: <span className="text-orange-400">بوکس • بدنسازی • فیلم و سریال • موزیک</span>
+      <p className="text-xs sm:text-sm text-neutral-400 font-normal pt-1">
+        توی وقت آزادم هم علاقه‌مندم با بوکس، بدنسازی، فیلم و سریال و موزیک وقت بگذرونم.
       </p>
     </div>
   ),

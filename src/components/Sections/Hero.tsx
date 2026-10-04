@@ -25,16 +25,18 @@ const Hero: FC = memo(() => {
         />
         <div className="z-10 max-w-screen-md px-4 sm:px-6">
           <div className="flex flex-col items-center gap-y-7 sm:gap-y-9 rounded-3xl bg-gray-900/70 p-8 sm:p-12 text-center shadow-2xl backdrop-blur-md border border-neutral-700/50">
-            {/* Profile Avatar - clean minimalist border */}
-            <div className="relative h-28 w-28 sm:h-36 sm:w-36 overflow-hidden rounded-full border-2 border-white/20 shadow-2xl ring-1 ring-white/10 shrink-0">
-              <Image alt={name} className="h-full w-full object-cover" placeholder="blur" priority src={profilepic} />
-            </div>
+            {/* Profile Avatar & Name */}
+            <div className="flex flex-col items-center gap-y-2.5">
+              <div className="relative h-24 w-24 sm:h-32 sm:w-32 overflow-hidden rounded-full border-2 border-white/20 shadow-2xl ring-1 ring-white/10 shrink-0">
+                <Image alt={name} className="h-full w-full object-cover" placeholder="blur" priority src={profilepic} />
+              </div>
 
-            <div className="flex flex-col items-center">
               <h1
                 className={classNames(
-                  'font-bold text-white',
-                  language === 'fa' ? 'font-nastaliq text-5xl sm:text-7xl lg:text-8xl py-2 tracking-normal' : 'text-3xl sm:text-5xl lg:text-6xl tracking-tight',
+                  'text-white transition-all',
+                  language === 'fa'
+                    ? 'font-nastaliq text-2xl sm:text-3xl text-neutral-200 py-1'
+                    : 'text-2xl sm:text-3xl font-bold tracking-tight',
                 )}>
                 {name}
               </h1>

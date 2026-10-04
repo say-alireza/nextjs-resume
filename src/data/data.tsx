@@ -67,8 +67,8 @@ export const heroData: Hero = {
       <p className="text-sm text-gray-300 sm:text-base leading-relaxed">
         Focused on end-to-end web development — building robust backends with Python & Django alongside modern, responsive interfaces with React & Next.js; from web applications and dashboards to practical Telegram bots.
       </p>
-      <p className="text-xs sm:text-sm text-neutral-400 font-medium pt-1">
-        Outside of code: <span className="text-orange-400">Boxing • Fitness • Cinema • Music</span>
+      <p className="text-xs sm:text-sm text-neutral-400 font-normal pt-1">
+        In my free time, I enjoy boxing, fitness, cinema, and music.
       </p>
     </div>
   ),
