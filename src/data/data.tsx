@@ -137,6 +137,18 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
+    title: 'EPD Community',
+    description: 'Weekly English discussion club web platform featuring session booking, seat management, and real-time Telegram integration.',
+    url: 'https://epdcommunity.ir/',
+    image: require('../images/portfolio/epd.jpg'),
+  },
+  {
+    title: 'Arvingaran Files',
+    description: 'Digital file store platform for browsing, purchasing, and downloading digital goods and resources.',
+    url: 'http://files.arvingaran.com/',
+    image: require('../images/portfolio/arvingaran.jpg'),
+  },
+  {
     title: 'LAN Chat Application',
     description: 'Open-source real-time local chat app built with Next.js, Django, and WebSockets.',
     url: 'https://github.com/say-alireza/local-chat-app',
