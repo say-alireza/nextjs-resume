@@ -157,20 +157,26 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Wee Restaurant',
     description: 'Custom restaurant website built for a client.',
-    url: 'https://github.com/say-alireza/Wee',
+    url: 'https://say-alireza.github.io/Wee/',
     image: require('../images/portfolio/wee.jpg'),
   },
   {
-    title: 'Game Hub',
-    description: 'Game store platform built using React and modern frontend tools.',
-    url: 'https://github.com/say-alireza/gamehub-react',
-    image: require('../images/portfolio/portfolio-1.jpg'),
+    title: 'Persian GIF Bot (@persiangifs_bot)',
+    description: 'Inline Persian GIF search Telegram bot for fast, categorized search across chats.',
+    url: 'https://t.me/persiangifs_bot',
+    image: require('../images/portfolio/persiangifs.jpg'),
   },
   {
     title: 'Trading Bot Panel',
     description: 'Management panel built with Django, Bootstrap, and REST integration.',
     url: 'https://github.com/say-alireza/trade-bot-pannel-front-end',
     image: require('../images/portfolio/portfolio-3.jpg'),
+  },
+  {
+    title: 'Game Hub',
+    description: 'Game store platform built using React and modern frontend tools.',
+    url: 'https://github.com/say-alireza/gamehub-react',
+    image: require('../images/portfolio/portfolio-1.jpg'),
   },
 ];
 

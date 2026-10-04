@@ -126,12 +126,6 @@ export const portfolioItemsFa: PortfolioItem[] = [
     image: require('../images/portfolio/arvingaran.jpg'),
   },
   {
-    title: 'ربات تلگرام گیف فارسی (@persiangifs_bot)',
-    description: 'ربات تلگرامی جستجوی درون‌برنامه‌ای (اینلاین) گیف‌های متحرک با دسته‌بندی و عبارات فارسی.',
-    url: 'https://t.me/persiangifs_bot',
-    image: require('../images/portfolio/persiangifs.jpg'),
-  },
-  {
     title: 'پیام‌رسان شبکه محلی (LAN Chat)',
     description: 'اپلیکیشن متن‌باز چت بلادرنگ در بستر شبکه محلی پیاده‌سازی شده با Next.js، Django و WebSockets.',
     url: 'https://github.com/say-alireza/local-chat-app',
@@ -140,20 +134,26 @@ export const portfolioItemsFa: PortfolioItem[] = [
   {
     title: 'وب‌سایت رستوران Wee',
     description: 'طراحی و توسعه اختصاصی وب‌سایت معرفی و منوی رستوران با طراحی ریسپانسیو و مدرن.',
-    url: 'https://github.com/say-alireza/Wee',
+    url: 'https://say-alireza.github.io/Wee/',
     image: require('../images/portfolio/wee.jpg'),
   },
   {
-    title: 'پلتفرم Game Hub',
-    description: 'فروشگاه و آرشیو بازی‌های ویدیویی پیاده‌سازی شده با React و مدرن‌ترین کتابخانه‌های فرانت‌اند.',
-    url: 'https://github.com/say-alireza/gamehub-react',
-    image: require('../images/portfolio/portfolio-1.jpg'),
+    title: 'ربات تلگرام گیف فارسی (@persiangifs_bot)',
+    description: 'ربات تلگرامی جستجوی درون‌برنامه‌ای (اینلاین) گیف‌های متحرک با دسته‌بندی و عبارات فارسی.',
+    url: 'https://t.me/persiangifs_bot',
+    image: require('../images/portfolio/persiangifs.jpg'),
   },
   {
     title: 'پنل مدیریت ربات ترید',
     description: 'داشبورد اختصاصی مدیریت و پایش استراتژی‌های معاملاتی با Django، Bootstrap و REST APIs.',
     url: 'https://github.com/say-alireza/trade-bot-pannel-front-end',
     image: require('../images/portfolio/portfolio-3.jpg'),
+  },
+  {
+    title: 'پلتفرم Game Hub',
+    description: 'فروشگاه و آرشیو بازی‌های ویدیویی پیاده‌سازی شده با React و مدرن‌ترین کتابخانه‌های فرانت‌اند.',
+    url: 'https://github.com/say-alireza/gamehub-react',
+    image: require('../images/portfolio/portfolio-1.jpg'),
   },
 ];
 
@@ -251,17 +251,8 @@ const navFa: Record<SectionId, string> = {
   [SectionId.Testimonials]: 'نظرات',
 };
 
-// Update English portfolio items to include Persian GIF Bot as well
-export const portfolioItemsEn: PortfolioItem[] = [
-  ...portfolioItems.slice(0, 2),
-  {
-    title: 'Persian GIF Search Bot',
-    description: 'Inline Telegram bot for searching and sending animated GIFs in Persian.',
-    url: 'https://t.me/persiangifs_bot',
-    image: require('../images/portfolio/persiangifs.jpg'),
-  },
-  ...portfolioItems.slice(2),
-];
+// English portfolio items directly from data.tsx
+export const portfolioItemsEn: PortfolioItem[] = portfolioItems;
 
 interface LanguageContextType {
   language: Language;
