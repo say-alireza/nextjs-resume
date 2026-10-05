@@ -35,8 +35,8 @@ export type Language = 'en' | 'fa';
 // --- Persian Translated Datasets (conforming to persian-typography & ZWNJ standard) ---
 
 export const homePageMetaFa: HomepageMeta = {
-  title: 'علی رضا رحیم پناه — توسعه‌دهنده فول‌استک',
-  description: 'رزومه و نمونه‌کارهای علی رضا رحیم پناه، توسعه‌دهنده فول‌استک مسلط به Django، React، Next.js و TypeScript.',
+  title: 'علیرضا رحیماپناه | توسعه‌دهنده فرانت‌اند و مهندس نرم‌افزار',
+  description: 'رزومه و نمونه‌کارهای علیرضا رحیماپناه (Alireza Rahimapanah) — برنامه‌نویس فرانت‌اند و مهندس نرم‌افزار مسلط به Next.js، React، TypeScript و Python ساکن مشهد.',
 };
 
 export const heroDataFa: Hero = {

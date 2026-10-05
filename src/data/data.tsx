@@ -31,8 +31,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'Alireza Rahimpanah - Full-Stack Developer',
-  description: 'Full-stack developer building websites and custom web apps with Django, React, and Next.js.',
+  title: 'Alireza Rahimapanah | Frontend & Full-Stack Developer',
+  description: 'Portfolio & Resume of Alireza Rahimapanah (علیرضا رحیماپناه) — Software Engineer and Frontend Developer specializing in React, Next.js, and TypeScript based in Mashhad.',
 };
 
 /**
