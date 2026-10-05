@@ -10,7 +10,7 @@ import Section from '../Layout/Section';
 import Socials from '../Socials';
 
 const Hero: FC = memo(() => {
-  const {t, language} = useLanguage();
+  const {t} = useLanguage();
   const {imageSrc, name, description, actions} = t.heroData;
 
   return (
@@ -31,13 +31,7 @@ const Hero: FC = memo(() => {
                 <Image alt={name} className="h-full w-full object-cover" placeholder="blur" priority src={profilepic} />
               </div>
 
-              <h1
-                className={classNames(
-                  'text-white transition-all',
-                  language === 'fa'
-                    ? 'font-nastaliq text-2xl sm:text-3xl text-neutral-200 py-1'
-                    : 'text-2xl sm:text-3xl font-bold tracking-tight',
-                )}>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
                 {name}
               </h1>
             </div>

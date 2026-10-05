@@ -41,7 +41,7 @@ export const homePageMetaFa: HomepageMeta = {
 
 export const heroDataFa: Hero = {
   imageSrc: heroData.imageSrc,
-  name: 'علی رضا رحیم  پناه',
+  name: 'علی رضا رحیم پناه',
   description: (
     <div className="flex flex-col gap-y-3 sm:gap-y-3.5 text-center max-w-xl">
       <p className="text-base text-gray-100 sm:text-lg leading-relaxed font-semibold">
