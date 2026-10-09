@@ -35,8 +35,8 @@ export type Language = 'en' | 'fa';
 // --- Persian Translated Datasets (conforming to persian-typography & ZWNJ standard) ---
 
 export const homePageMetaFa: HomepageMeta = {
-  title: 'علیرضا رحیماپناه | توسعه‌دهنده فرانت‌اند و مهندس نرم‌افزار',
-  description: 'رزومه و نمونه‌کارهای علیرضا رحیماپناه (Alireza Rahimapanah) — برنامه‌نویس فرانت‌اند و مهندس نرم‌افزار مسلط به Next.js، React، TypeScript و Python ساکن مشهد.',
+  title: 'علیرضا رحیم پناه | توسعه‌دهنده فول‌استک',
+  description: 'رزومه و نمونه‌کارهای علیرضا رحیم پناه (Alireza Rahimapanah) — توسعه‌دهنده فول‌استک مسلط به Next.js، React، TypeScript و Python ساکن مشهد.',
 };
 
 export const heroDataFa: Hero = {
@@ -195,8 +195,8 @@ export const contactFa: ContactSection = {
   items: [
     {
       type: ContactType.Telegram,
-      text: '@say_alireza (پاسخ‌گویی سریع‌تر)',
-      href: 'https://t.me/say_alireza',
+      text: '@say_alirexa (پاسخ‌گویی سریع‌تر)',
+      href: 'https://t.me/say_alirexa',
     },
     {
       type: ContactType.Email,

@@ -20,7 +20,7 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         url: siteUrl,
         name: 'Alireza Rahimapanah Portfolio',
         description:
-          'Personal resume and portfolio of Alireza Rahimapanah (علیرضا رحیماپناه), Frontend & Full-Stack Developer.',
+          'Personal resume and portfolio of Alireza Rahimapanah (علیرضا رحیم پناه), Full-Stack Developer.',
         inLanguage: ['en', 'fa'],
       },
       {
@@ -38,7 +38,6 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         '@id': `${siteUrl}/#person`,
         name: 'Alireza Rahimapanah',
         alternateName: [
-          'علیرضا رحیماپناه',
           'علی رضا رحیم پناه',
           'علیرضا رحیم پناه',
           'Alireza Rahimpanah',
@@ -46,10 +45,10 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         ],
         url: siteUrl,
         image: `${siteUrl}/profilepic.jpg`,
-        jobTitle: 'Frontend & Full-Stack Developer',
+        jobTitle: 'Full-Stack Developer',
         worksFor: {
           '@type': 'Organization',
-          name: 'Freelance Software Engineer',
+          name: 'Freelance Full-Stack Developer',
         },
         alumniOf: {
           '@type': 'EducationalOrganization',
@@ -89,7 +88,7 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         <title>{title}</title>
         <meta content={description} name="description" />
         <meta
-          content="علیرضا رحیماپناه, علیرضا رحیم پناه, علی رضا رحیم پناه, Alireza Rahimapanah, Alireza Rahimpanah, توسعه دهنده فرانت اند, برنامه نویس Next.js, برنامه نویس مشهد, React Developer, Frontend Developer Mashhad, say-alireza"
+          content="علیرضا رحیم پناه, علی رضا رحیم پناه, Alireza Rahimapanah, Alireza Rahimpanah, توسعه دهنده فول استک, برنامه نویس Full-Stack, برنامه نویس Next.js, برنامه نویس مشهد, Full-Stack Developer, Frontend Developer Mashhad, say-alireza"
           name="keywords"
         />
         <meta content="Alireza Rahimapanah" name="author" />

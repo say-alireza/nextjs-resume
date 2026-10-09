@@ -31,8 +31,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'Alireza Rahimapanah | Frontend & Full-Stack Developer',
-  description: 'Portfolio & Resume of Alireza Rahimapanah (علیرضا رحیماپناه) — Software Engineer and Frontend Developer specializing in React, Next.js, and TypeScript based in Mashhad.',
+  title: 'Alireza Rahimapanah | Full-Stack Developer',
+  description: 'Portfolio & Resume of Alireza Rahimapanah (علیرضا رحیم پناه) — Full-Stack Developer specializing in React, Next.js, and TypeScript based in Mashhad.',
 };
 
 /**
@@ -246,8 +246,8 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Telegram,
-      text: '@say_alireza (fastest response)',
-      href: 'https://t.me/say_alireza',
+      text: '@say_alirexa (fastest response)',
+      href: 'https://t.me/say_alirexa',
     },
     {
       type: ContactType.Email,
