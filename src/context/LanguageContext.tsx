@@ -1,9 +1,4 @@
-import {
-  AcademicCapIcon,
-  ArrowDownTrayIcon,
-  MapIcon,
-  SparklesIcon,
-} from '@heroicons/react/24/outline';
+import {AcademicCapIcon, ArrowDownTrayIcon, MapIcon, SparklesIcon} from '@heroicons/react/24/outline';
 import React, {createContext, ReactNode, useContext, useEffect, useMemo, useState} from 'react';
 
 import {
@@ -36,7 +31,8 @@ export type Language = 'en' | 'fa';
 
 export const homePageMetaFa: HomepageMeta = {
   title: 'علیرضا رحیم پناه | توسعه‌دهنده فول‌استک',
-  description: 'رزومه و نمونه‌کارهای علیرضا رحیم پناه (Alireza Rahimapanah) — توسعه‌دهنده فول‌استک مسلط به Next.js، React، TypeScript و Python ساکن مشهد.',
+  description:
+    'رزومه و نمونه‌کارهای علیرضا رحیم پناه (Alireza Rahimapanah) — توسعه‌دهنده فول‌استک مسلط به Next.js، React، TypeScript و Python ساکن مشهد.',
 };
 
 export const heroDataFa: Hero = {
@@ -48,7 +44,8 @@ export const heroDataFa: Hero = {
         سلام، علی رضام؛ توسعه‌دهنده فول‌استک ساکن مشهد.
       </p>
       <p className="text-sm text-gray-300 sm:text-base leading-relaxed">
-        تمرکزم روی توسعه وب فول‌استک، پیاده‌سازی بک‌اند با Python و Django، و طراحی رابط‌های کاربری مدرن با React و Next.js هستش؛ از وب‌اپلیکیشن‌ها و پنل‌های مدیریتی تا ربات‌های کاربردی تلگرام.
+        تمرکزم روی توسعه وب فول‌استک، پیاده‌سازی بک‌اند با Python و Django، و طراحی رابط‌های کاربری مدرن با React و
+        Next.js هستش؛ از وب‌اپلیکیشن‌ها و پنل‌های مدیریتی تا ربات‌های کاربردی تلگرام.
       </p>
       <p className="text-xs sm:text-sm text-neutral-400 font-normal pt-1">
         توی وقت آزادم هم علاقه‌مندم با بوکس، بدنسازی، فیلم و سریال و موزیک وقت بگذرونم.
@@ -172,7 +169,8 @@ export const experienceFa: TimelineItem[] = [
     title: 'توسعه‌دهنده فریلنسر وب',
     content: (
       <p>
-        طراحی و اجرای پلتفرم‌های وب اختصاصی، داشبوردهای مدیریتی، ابزارهای اتوماسیون و ادغام‌های بلادرنگ با Next.js، React و Django برای مشتریان مختلف.
+        طراحی و اجرای پلتفرم‌های وب اختصاصی، داشبوردهای مدیریتی، ابزارهای اتوماسیون و ادغام‌های بلادرنگ با Next.js،
+        React و Django برای مشتریان مختلف.
       </p>
     ),
   },
@@ -180,11 +178,7 @@ export const experienceFa: TimelineItem[] = [
     date: 'آذر ۱۴۰۲ — مرداد ۱۴۰۳',
     location: 'جهاد دانشگاهی بیرجند',
     title: 'کارآموز توسعه فرانت‌اند',
-    content: (
-      <p>
-        توسعه رابط‌های کاربری با جاوااسکریپت و Bootstrap زیر نظر مهندس مهاجر (مسئول IT جهاد دانشگاهی).
-      </p>
-    ),
+    content: <p>توسعه رابط‌های کاربری با جاوااسکریپت و Bootstrap زیر نظر مهندس مهاجر (مسئول IT جهاد دانشگاهی).</p>,
   },
 ];
 
@@ -339,9 +333,7 @@ export const LanguageProvider: React.FC<{children: ReactNode}> = ({children}) =>
   }, [language]);
 
   return (
-    <LanguageContext.Provider value={{language, toggleLanguage, setLanguage, t}}>
-      {children}
-    </LanguageContext.Provider>
+    <LanguageContext.Provider value={{language, toggleLanguage, setLanguage, t}}>{children}</LanguageContext.Provider>
   );
 };
 

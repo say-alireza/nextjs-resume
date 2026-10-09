@@ -32,7 +32,8 @@ import {
  */
 export const homePageMeta: HomepageMeta = {
   title: 'Alireza Rahimapanah | Full-Stack Developer',
-  description: 'Portfolio & Resume of Alireza Rahimapanah (علیرضا رحیم پناه) — Full-Stack Developer specializing in React, Next.js, and TypeScript based in Mashhad.',
+  description:
+    'Portfolio & Resume of Alireza Rahimapanah (علیرضا رحیم پناه) — Full-Stack Developer specializing in React, Next.js, and TypeScript based in Mashhad.',
 };
 
 /**
@@ -65,7 +66,8 @@ export const heroData: Hero = {
         Hi, I'm Alireza; a Full-Stack Developer based in Mashhad.
       </p>
       <p className="text-sm text-gray-300 sm:text-base leading-relaxed">
-        Focused on end-to-end web development — building robust backends with Python & Django alongside modern, responsive interfaces with React & Next.js; from web applications and dashboards to practical Telegram bots.
+        Focused on end-to-end web development — building robust backends with Python & Django alongside modern,
+        responsive interfaces with React & Next.js; from web applications and dashboards to practical Telegram bots.
       </p>
       <p className="text-xs sm:text-sm text-neutral-400 font-normal pt-1">
         In my free time, I enjoy boxing, fitness, cinema, and music.
@@ -141,7 +143,8 @@ export const skills: SkillGroup[] = [
 export const portfolioItems: PortfolioItem[] = [
   {
     title: 'EPD Community',
-    description: 'Weekly English discussion club web platform featuring session booking, seat management, and real-time Telegram integration.',
+    description:
+      'Weekly English discussion club web platform featuring session booking, seat management, and real-time Telegram integration.',
     url: 'https://epdcommunity.ir/',
     image: require('../images/portfolio/epd.jpg'),
   },
@@ -216,7 +219,8 @@ export const experience: TimelineItem[] = [
     title: 'Frontend Developer Intern',
     content: (
       <p>
-        Built frontend user interfaces using JavaScript and Bootstrap under the supervision of Eng. Mohajer (Head of IT).
+        Built frontend user interfaces using JavaScript and Bootstrap under the supervision of Eng. Mohajer (Head of
+        IT).
       </p>
     ),
   },

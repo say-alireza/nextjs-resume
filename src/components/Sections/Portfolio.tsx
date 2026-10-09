@@ -77,7 +77,9 @@ const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, descrip
       <div className="relative flex h-full w-full flex-col items-center justify-center p-4 text-center">
         <div className="flex w-full flex-col items-center justify-center gap-y-2 overflow-hidden">
           <h2 className="text-center font-bold text-white opacity-100 text-sm sm:text-base leading-snug">{title}</h2>
-          <p className="line-clamp-4 text-xs text-neutral-200 opacity-100 sm:text-sm leading-relaxed max-w-xs">{description}</p>
+          <p className="line-clamp-4 text-xs text-neutral-200 opacity-100 sm:text-sm leading-relaxed max-w-xs">
+            {description}
+          </p>
         </div>
         <ArrowTopRightOnSquareIcon className="absolute bottom-2 right-2 h-4 w-4 shrink-0 text-white/80 sm:bottom-2.5 sm:right-2.5 rtl:right-auto rtl:left-2 sm:rtl:left-2.5" />
       </div>

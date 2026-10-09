@@ -31,14 +31,10 @@ const Hero: FC = memo(() => {
                 <Image alt={name} className="h-full w-full object-cover" placeholder="blur" priority src={profilepic} />
               </div>
 
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-                {name}
-              </h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">{name}</h1>
             </div>
 
-            <div className="w-full flex justify-center">
-              {description}
-            </div>
+            <div className="w-full flex justify-center">{description}</div>
 
             <div className="flex gap-x-6 text-neutral-200 pt-1 sm:pt-2">
               <Socials />
@@ -49,7 +45,9 @@ const Hero: FC = memo(() => {
                 <a
                   className={classNames(
                     'flex items-center gap-x-2.5 rounded-full border-2 bg-none px-6 py-2.5 sm:px-7 sm:py-3 text-sm font-medium text-white ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base transition-all hover:scale-105',
-                    primary ? 'border-orange-500 ring-orange-500 text-orange-400 hover:text-white' : 'border-neutral-400 ring-neutral-400',
+                    primary
+                      ? 'border-orange-500 ring-orange-500 text-orange-400 hover:text-white'
+                      : 'border-neutral-400 ring-neutral-400',
                   )}
                   href={href}
                   key={text}>

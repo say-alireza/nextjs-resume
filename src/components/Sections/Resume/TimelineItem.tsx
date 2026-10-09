@@ -18,7 +18,9 @@ const TimelineItem: FC<{item: TimelineItemType}> = memo(({item}) => {
         </div>
       </div>
       {/* متن توضیحات - خاکستری تیره استاندارد برای مطالعه */}
-      {content && <div className="text-base leading-relaxed text-gray-700 md:text-start rtl:md:text-right">{content}</div>}
+      {content && (
+        <div className="text-base leading-relaxed text-gray-700 md:text-start rtl:md:text-right">{content}</div>
+      )}
     </div>
   );
 });
