@@ -33,7 +33,7 @@ import {
 export const homePageMeta: HomepageMeta = {
   title: 'Alireza Rahimapanah | Full-Stack Developer',
   description:
-    'Portfolio & Resume of Alireza Rahimapanah (علیرضا رحیم پناه) — Full-Stack Developer specializing in React, Next.js, and TypeScript based in Mashhad.',
+    'Portfolio & Resume of Alireza Rahimapanah — Full-Stack Developer specializing in React, Next.js, and TypeScript (Available Worldwide / Remote).',
 };
 
 /**
@@ -63,7 +63,7 @@ export const heroData: Hero = {
   description: (
     <div className="flex flex-col gap-y-3 sm:gap-y-3.5 text-center max-w-xl">
       <p className="text-base text-gray-100 sm:text-lg leading-relaxed font-semibold">
-        Hi, I'm Alireza; a Full-Stack Developer based in Mashhad.
+        Hi, I'm Alireza; a Full-Stack Developer available for remote work.
       </p>
       <p className="text-sm text-gray-300 sm:text-base leading-relaxed">
         Focused on end-to-end web development — building robust backends with Python & Django alongside modern,
@@ -96,9 +96,9 @@ export const aboutData: About = {
   profileImageSrc: profilepic,
   description: `I build websites, management panels, internal tools, and real-time web applications for small businesses and individuals. As a full-stack developer, I combine backend efficiency with responsive frontend design to deliver complete web products.`,
   aboutItems: [
-    {label: 'Location', text: 'Mashhad, Iran', Icon: MapIcon},
-    {label: 'Status', text: 'Available for Freelance', Icon: SparklesIcon},
-    {label: 'Nationality', text: 'Iranian', Icon: FlagIcon},
+    {label: 'Location', text: 'Remote (Worldwide)', Icon: MapIcon},
+    {label: 'Status', text: 'Available for Freelance & Contracts', Icon: SparklesIcon},
+    {label: 'Workplace', text: 'Remote / Flexible Timezones', Icon: FlagIcon},
     {label: 'Interests', text: 'Full-Stack Web Apps, Real-time Systems, UI/UX', Icon: SparklesIcon},
     {label: 'Study', text: 'BSc Computer Engineering, University of Birjand', Icon: AcademicCapIcon},
     {label: 'Experience', text: '2+ Years in Web Development', Icon: BuildingOffice2Icon},
@@ -260,8 +260,8 @@ export const contact: ContactSection = {
     },
     {
       type: ContactType.Location,
-      text: 'Mashhad, Iran',
-      href: 'https://www.google.com/maps/place/Mashhad',
+      text: 'Remote (Worldwide)',
+      href: 'https://github.com/say-alireza',
     },
   ],
 };

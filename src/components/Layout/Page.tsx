@@ -51,9 +51,8 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         },
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Mashhad',
-          addressRegion: 'Razavi Khorasan',
-          addressCountry: 'IR',
+          addressLocality: 'Remote',
+          addressCountry: 'Worldwide',
         },
         sameAs: [
           'https://github.com/say-alireza',
@@ -82,7 +81,7 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         <title>{title}</title>
         <meta content={description} name="description" />
         <meta
-          content="علیرضا رحیم پناه, علی رضا رحیم پناه, Alireza Rahimapanah, Alireza Rahimpanah, توسعه دهنده فول استک, برنامه نویس Full-Stack, برنامه نویس Next.js, برنامه نویس مشهد, Full-Stack Developer, Frontend Developer Mashhad, say-alireza"
+          content="علیرضا رحیم پناه, علی رضا رحیم پناه, Alireza Rahimapanah, Alireza Rahimpanah, توسعه دهنده فول استک, برنامه نویس Full-Stack, برنامه نویس Next.js, Full-Stack Developer, Frontend Developer, say-alireza"
           name="keywords"
         />
         <meta content="Alireza Rahimapanah" name="author" />
