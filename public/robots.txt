@@ -3,4 +3,4 @@ Allow: /
 Disallow: /404/
 Disallow: /500/
 
-Sitemap: https://cv.alirezarp.ir/sitemap.xml
+Sitemap: https://alirezarp.is-a.dev/sitemap.xml
